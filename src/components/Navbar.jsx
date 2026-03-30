@@ -40,7 +40,7 @@ export default function Navbar() {
       >
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
           <Link to="/" className="text-2xl md:text-3xl font-serif text-[#4c0519] tracking-widest uppercase hover:opacity-70 transition-opacity">
-            Lumina
+            Mehar
           </Link>
 
           <div className="hidden md:flex space-x-12 items-center">

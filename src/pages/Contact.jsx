@@ -56,7 +56,7 @@ return (
                   Email
                 </p>
                 <p className="text-2xl text-[#4c0519]">
-                  hello@atelier.com
+                  hello@mehar.com
                 </p>
               </div>
             </div>

@@ -17,7 +17,7 @@ const LoadingScreen = () => (
         <div className="w-full h-full bg-[#4c0519] animate-[slideDown_1.5s_ease-in-out_infinite]" />
       </div>
       <p className="uppercase tracking-[0.4em] text-[10px] text-[#4c0519] font-medium animate-pulse">
-        Loading...
+        Mehar
       </p>
     </div>
   </div>
