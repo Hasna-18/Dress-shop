@@ -1,8 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Jost:wght@300;400;500;600;700&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Lato", sans-serif;
-  --font-serif: "Playfair Display", serif;
+  --font-sans: "Jost", sans-serif;
+  --font-serif: "Cormorant Garamond", serif;
   
   --animate-fade-in-up: fadeInUp 1s ease-out forwards;
 }
@@ -18,10 +19,46 @@
   100% { transform: translateY(-100%); }
 }
 
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes countDown {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
 html {
   scroll-behavior: smooth;
 }
 
 html, body {
   overflow-x: hidden;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #faf8f5;
+}
+::-webkit-scrollbar-thumb {
+  background: #c4a77d;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #a08860;
+}
+
+/* Selection color */
+::selection {
+  background: #c4a77d40;
+  color: #1a1a1a;
 }

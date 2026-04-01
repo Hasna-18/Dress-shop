@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link, useLocation } from 'react-router-dom';
+// import { Search, User, Heart, ShoppingBag } from 'lucide-react';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -18,52 +19,101 @@ export default function Navbar() {
   // Close menu on route change
   useEffect(() => {
     setIsOpen(false);
-    window.scrollTo(0, 0); // Scroll to top on new page
+    window.scrollTo(0, 0);
   }, [location]);
 
   const navLinks = [
     { name: 'Home', href: '/' },
+    { name: 'Shop', href: '/gallery' },
     { name: 'About', href: '/about' },
-    { name: 'Collections', href: '/gallery' },
     { name: 'Contact', href: '/contact' },
   ];
 
-  const isHome = location.pathname === '/';
-
   return (
     <>
+      {/* Top Promotional Bar */}
+      <div className="bg-[#1a1a1a] text-white py-2.5 text-center text-xs tracking-[0.15em] font-light overflow-hidden relative z-[60]">
+        <div className="flex whitespace-nowrap animate-[marquee_20s_linear_infinite]">
+          <span className="mx-8">✦ 50% OFF Summer Super Sale ✦</span>
+          <span className="mx-8">Free Delivery On Orders Above ₹999</span>
+          <span className="mx-8">✦ New Arrivals Every Week ✦</span>
+          <span className="mx-8">Use Code MEHAR20 for Extra 20% Off</span>
+          <span className="mx-8">✦ 50% OFF Summer Super Sale ✦</span>
+          <span className="mx-8">Free Delivery On Orders Above ₹999</span>
+          <span className="mx-8">✦ New Arrivals Every Week ✦</span>
+          <span className="mx-8">Use Code MEHAR20 for Extra 20% Off</span>
+        </div>
+      </div>
+
+      {/* Main Navigation */}
       <motion.nav 
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-        className={`fixed w-full z-50 transition-all duration-500 ${scrolled ? 'bg-[#fffafb]/95 backdrop-blur-xl border-b border-rose-100/50 py-4' : 'bg-transparent py-8'}`}
+        className={`sticky top-0 w-full z-50 transition-all duration-500 ${
+          scrolled 
+            ? 'bg-white/98 backdrop-blur-xl shadow-[0_1px_0_0_rgba(0,0,0,0.05)] py-3' 
+            : 'bg-white py-5'
+        }`}
       >
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
-          <Link to="/" className="text-2xl md:text-3xl font-serif text-[#4c0519] tracking-widest uppercase hover:opacity-70 transition-opacity">
-            Mehar
+          
+          {/* Left - Hamburger on mobile */}
+          <button 
+            onClick={() => setIsOpen(!isOpen)}
+            className="md:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1.5 focus:outline-none z-50"
+          >
+            <span className={`block w-5 h-[1px] bg-[#1a1a1a] transform transition duration-500 ease-in-out ${isOpen ? 'rotate-45 translate-y-[7px]' : ''}`} />
+            <span className={`block w-5 h-[1px] bg-[#1a1a1a] transition duration-500 ease-in-out ${isOpen ? 'opacity-0' : 'opacity-100'}`} />
+            <span className={`block w-5 h-[1px] bg-[#1a1a1a] transform transition duration-500 ease-in-out ${isOpen ? '-rotate-45 -translate-y-[7px]' : ''}`} />
+          </button>
+
+          {/* Center - Logo */}
+          <Link 
+            to="/" 
+            className="absolute left-1/2 -translate-x-1/2 md:static md:translate-x-0 text-2xl md:text-3xl font-serif font-semibold text-[#1a1a1a] tracking-[0.08em] hover:opacity-70 transition-opacity"
+          >
+            Clothing.
           </Link>
 
-          <div className="hidden md:flex space-x-12 items-center">
+          {/* Desktop Nav Links */}
+          <div className="hidden md:flex items-center absolute left-1/2 -translate-x-1/2">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 to={link.href}
-                className={`text-[11px] uppercase tracking-[0.25em] font-medium transition-colors relative group ${location.pathname === link.href ? 'text-[#4c0519]' : 'text-[#4c0519]/60 hover:text-[#4c0519]'}`}
+                className={`text-[13px] font-normal tracking-[0.05em] transition-colors relative group mx-6 ${
+                  location.pathname === link.href 
+                    ? 'text-[#1a1a1a]' 
+                    : 'text-[#666] hover:text-[#1a1a1a]'
+                }`}
               >
                 {link.name}
-                <span className={`absolute -bottom-1.5 left-0 h-px bg-[#4c0519] transition-all duration-300 ${location.pathname === link.href ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
+                <span className={`absolute -bottom-1 left-0 h-[1px] bg-[#1a1a1a] transition-all duration-300 ${
+                  location.pathname === link.href ? 'w-full' : 'w-0 group-hover:w-full'
+                }`}></span>
               </Link>
             ))}
           </div>
 
-          <button 
-            onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1.5 focus:outline-none z-50 mix-blend-normal"
-          >
-            <span className={`block w-6 h-px bg-black transform transition duration-500 ease-in-out ${isOpen ? 'rotate-45 translate-y-2' : ''}`} />
-            <span className={`block w-6 h-px bg-black transition duration-500 ease-in-out ${isOpen ? 'opacity-0' : 'opacity-100'}`} />
-            <span className={`block w-6 h-px bg-black transform transition duration-500 ease-in-out ${isOpen ? '-rotate-45 -translate-y-1.5' : ''}`} />
-          </button>
+          {/* Right - Icons */}
+          {/* <div className="flex items-center gap-5">
+            <button className="text-[#1a1a1a] hover:text-[#c4a77d] transition-colors hidden sm:block" aria-label="Search">
+              <Search size={18} strokeWidth={1.5} />
+            </button>
+            <button className="text-[#1a1a1a] hover:text-[#c4a77d] transition-colors hidden sm:block" aria-label="Profile">
+              <User size={18} strokeWidth={1.5} />
+            </button>
+            <button className="text-[#1a1a1a] hover:text-[#c4a77d] transition-colors hidden sm:block" aria-label="Wishlist">
+              <Heart size={18} strokeWidth={1.5} />
+            </button>
+            <button className="text-[#1a1a1a] hover:text-[#c4a77d] transition-colors relative" aria-label="Cart">
+              <ShoppingBag size={18} strokeWidth={1.5} />
+              <span className="absolute -top-1.5 -right-1.5 w-4 h-4 bg-[#c4a77d] text-white text-[9px] rounded-full flex items-center justify-center font-medium">
+                2
+              </span>
+            </button>
+          </div> */}
         </div>
       </motion.nav>
 
@@ -71,27 +121,49 @@ export default function Navbar() {
       <AnimatePresence>
         {isOpen && (
           <motion.div 
-            initial={{ opacity: 0, clipPath: "circle(0% at top right)" }}
-            animate={{ opacity: 1, clipPath: "circle(150% at top right)" }}
-            exit={{ opacity: 0, clipPath: "circle(0% at top right)" }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="fixed inset-0 z-40 bg-[#fffafb] flex flex-col items-center justify-center space-y-10"
+            initial={{ opacity: 0, x: "-100%" }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: "-100%" }}
+            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+            className="fixed inset-0 z-40 bg-white flex flex-col items-start justify-center px-12 space-y-8"
           >
             {navLinks.map((link, i) => (
               <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3 + i * 0.1, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                initial={{ opacity: 0, x: -30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.2 + i * 0.08, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
                 key={link.name}
               >
                 <Link
                   to={link.href}
-                  className="text-4xl font-serif text-[#4c0519] hover:italic transition-all duration-300 relative group"
+                  className={`text-4xl font-serif transition-all duration-300 relative group ${
+                    location.pathname === link.href 
+                      ? 'text-[#c4a77d]' 
+                      : 'text-[#1a1a1a] hover:text-[#c4a77d]'
+                  }`}
                 >
                   {link.name}
                 </Link>
               </motion.div>
             ))}
+
+            {/* Mobile icons */}
+            {/* <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.6 }}
+              className="flex gap-6 pt-8 border-t border-gray-100 w-full"
+            >
+              <button className="text-[#1a1a1a] hover:text-[#c4a77d] transition-colors" aria-label="Search">
+                <Search size={20} strokeWidth={1.5} />
+              </button>
+              <button className="text-[#1a1a1a] hover:text-[#c4a77d] transition-colors" aria-label="Profile">
+                <User size={20} strokeWidth={1.5} />
+              </button>
+              <button className="text-[#1a1a1a] hover:text-[#c4a77d] transition-colors" aria-label="Wishlist">
+                <Heart size={20} strokeWidth={1.5} />
+              </button>
+            </motion.div> */}
           </motion.div>
         )}
       </AnimatePresence>

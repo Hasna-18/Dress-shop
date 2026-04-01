@@ -11,13 +11,13 @@ const Contact = lazy(() => import('./pages/Contact'));
 
 // Loading Fallback
 const LoadingScreen = () => (
-  <div className="h-screen w-full flex items-center justify-center bg-[#fffafb]">
+  <div className="h-screen w-full flex items-center justify-center bg-[#faf8f5]">
     <div className="flex flex-col items-center">
-      <div className="w-px h-12 bg-[#4c0519]/20 overflow-hidden relative mb-6">
-        <div className="w-full h-full bg-[#4c0519] animate-[slideDown_1.5s_ease-in-out_infinite]" />
+      <div className="w-px h-12 bg-[#1a1a1a]/20 overflow-hidden relative mb-6">
+        <div className="w-full h-full bg-[#1a1a1a] animate-[slideDown_1.5s_ease-in-out_infinite]" />
       </div>
-      <p className="uppercase tracking-[0.4em] text-[10px] text-[#4c0519] font-medium animate-pulse">
-        Mehar
+      <p className="uppercase tracking-[0.4em] text-[10px] text-[#1a1a1a] font-medium animate-pulse font-sans">
+        Clothing.
       </p>
     </div>
   </div>
@@ -26,7 +26,7 @@ const LoadingScreen = () => (
 function App() {
   return (
     <Router>
-      <div className="font-sans text-gray-900 bg-[#fffafb] selection:bg-rose-200 selection:text-rose-900 min-h-screen flex flex-col">
+      <div className="font-sans text-[#1a1a1a] bg-white selection:bg-[#c4a77d]/30 selection:text-[#1a1a1a] min-h-screen flex flex-col">
         <Navbar />
         <main className="grow">
           <Suspense fallback={<LoadingScreen />}>
