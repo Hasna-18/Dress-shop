@@ -23,7 +23,7 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-6 md:px-12 py-16 md:py-20">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
             <div>
-              <p className="text-[#c4a77d] text-xs tracking-[0.2em] uppercase font-medium mb-3">Newsletter</p>
+              <p className="text-[#f4a7bb] text-xs tracking-[0.2em] uppercase font-bold mb-3">Newsletter</p>
               <h3 className="text-3xl md:text-4xl font-serif font-semibold leading-tight">
                 Subscribe to Get <span className="italic font-light">Special</span><br />
                 Offers & Updates
@@ -33,9 +33,9 @@ export default function Footer() {
               <input
                 type="email"
                 placeholder="Enter your email address"
-                className="flex-1 bg-white/5 border border-white/15 rounded-lg px-6 py-4 text-sm text-white placeholder:text-white/30 focus:outline-none focus:border-[#c4a77d] transition-colors"
+                className="flex-1 bg-white/5 border border-white/15 rounded-lg px-6 py-4 text-sm text-white placeholder:text-white/30 focus:outline-none focus:border-[#f4a7bb] transition-colors"
               />
-              <button className="bg-[#c4a77d] text-[#1a1a1a] px-8 py-4 rounded-lg text-sm font-medium hover:bg-[#d4b78d] transition-colors flex items-center gap-2">
+              <button className="bg-[#f4a7bb] text-[#1a1a1a] px-8 py-4 rounded-lg text-sm font-medium hover:bg-[#d88fa1] transition-colors flex items-center gap-2">
                 <Send size={16} />
                 Subscribe
               </button>
@@ -64,7 +64,7 @@ export default function Footer() {
                   key={social.label}
                   href="#" 
                   aria-label={social.label}
-                  className="w-10 h-10 rounded-full border border-white/15 flex items-center justify-center text-white/50 hover:text-white hover:border-[#c4a77d] hover:bg-[#c4a77d]/10 transition-all duration-300"
+                  className="w-10 h-10 rounded-full border border-white/15 flex items-center justify-center text-white/50 hover:text-white hover:border-[#f4a7bb] hover:bg-[#f4a7bb]/10 transition-all duration-300"
                 >
                   {social.icon}
                 </a>
@@ -84,7 +84,7 @@ export default function Footer() {
                 { name: "Latest Style", href: "/gallery" },
               ].map((link) => (
                 <li key={link.name}>
-                  <Link to={link.href} className="text-white/40 text-sm hover:text-[#c4a77d] transition-colors">
+                  <Link to={link.href} className="text-white/40 text-sm hover:text-[#f4a7bb] transition-colors">
                     {link.name}
                   </Link>
                 </li>
@@ -98,7 +98,7 @@ export default function Footer() {
             <ul className="space-y-3">
               {["FAQ", "Style Guide", "Visit Us", "Privacy Policy"].map((item) => (
                 <li key={item}>
-                  <a href="#" className="text-white/40 text-sm hover:text-[#c4a77d] transition-colors">
+                  <a href="#" className="text-white/40 text-sm hover:text-[#f4a7bb] transition-colors">
                     {item}
                   </a>
                 </li>
@@ -111,16 +111,16 @@ export default function Footer() {
             <h4 className="text-sm font-medium uppercase tracking-[0.15em] mb-6 text-white/80">Contact Us</h4>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
-                <MapPin size={16} className="text-[#c4a77d] mt-0.5 shrink-0" />
+                <MapPin size={16} className="text-[#f4a7bb] mt-0.5 shrink-0" />
                 <span className="text-white/40 text-sm">123 Fashion Street, Mumbai, India 400001</span>
               </li>
               <li className="flex items-center gap-3">
-                <Phone size={16} className="text-[#c4a77d] shrink-0" />
+                <Phone size={16} className="text-[#f4a7bb] shrink-0" />
                 <span className="text-white/40 text-sm">+91 98765 43210</span>
               </li>
               <li className="flex items-center gap-3">
-                <Mail size={16} className="text-[#c4a77d] shrink-0" />
-                <span className="text-white/40 text-sm">hello@clothing.in</span>
+                <Mail size={16} className="text-[#f4a7bb] shrink-0" />
+                <span className="text-white/40 text-sm">hello@mehar.in</span>
               </li>
             </ul>
           </div>

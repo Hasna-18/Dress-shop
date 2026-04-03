@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react";
 
 const HeroSection = () => {
   return (
-    <section className="relative bg-[#faf8f5] overflow-hidden">
+    <section className="relative bg-[#fff5f8] overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 md:px-12 py-16 md:py-20 lg:py-24">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center min-h-[70vh]">
 
@@ -19,7 +19,7 @@ const HeroSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.6 }}
-              className="text-[#c4a77d] text-sm tracking-[0.2em] uppercase font-medium mb-6"
+              className="text-[#f4a7bb] text-sm tracking-[0.2em] uppercase font-bold mb-6"
             >
               Ladies Wear Collection
             </motion.p>
@@ -85,8 +85,8 @@ const HeroSection = () => {
             </div>
 
             {/* Floating decorative elements */}
-            <div className="absolute -top-4 -right-4 w-20 h-20 border border-[#c4a77d]/20 rounded-full hidden lg:block animate-[float_3s_ease-in-out_infinite]" />
-            <div className="absolute -bottom-6 -left-6 w-32 h-32 border border-[#c4a77d]/10 rounded-full hidden lg:block animate-[float_4s_ease-in-out_infinite_0.5s]" />
+            <div className="absolute -top-4 -right-4 w-20 h-20 border border-[#f4a7bb]/20 rounded-full hidden lg:block animate-[float_3s_ease-in-out_infinite]" />
+            <div className="absolute -bottom-6 -left-6 w-32 h-32 border border-[#f4a7bb]/10 rounded-full hidden lg:block animate-[float_4s_ease-in-out_infinite_0.5s]" />
           </motion.div>
         </div>
       </div>

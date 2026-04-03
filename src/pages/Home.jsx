@@ -6,19 +6,15 @@ import ShopByCategory from "../components/category";
 import HeroSection from "../components/herosection";
 import PromoSection from "../components/product";
 
-// removed FeatureBar as requested (not e-commerce)
-
-// removed FeatureBar component
-
 /* ── Stock Arrivals ────────────────────────────── */
 const stockItems = [
-  { name: "Daily Hijab", img: "/assets/tops/h31.png", tag: "New Stock" },
-  { name: "Ladies Churithar", img: "/assets/C2.png", tag: "Variety" },
+  { name: "Daily Hijab", img: "/assets/tops/h33.png", tag: "New Stock" },
+  { name: "Ladies Churithar", img: "/assets/C10.png", tag: "Variety" },
   { name: "Quality Shawl", img: "/assets/tops/h32.png", tag: "Hot" },
 ];
 
 const StockSection = () => (
-  <section className="py-16 md:py-24 px-6 md:px-12 bg-[#faf8f5]">
+  <section className="py-16 md:py-24 px-6 md:px-12 bg-[#fff0f3]">
     <div className="max-w-7xl mx-auto">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
@@ -28,7 +24,7 @@ const StockSection = () => (
         className="flex flex-col md:flex-row md:items-end md:justify-between mb-12"
       >
         <div>
-          <p className="text-[#c4a77d] text-xs tracking-[0.2em] uppercase font-medium mb-3">Shop Arrivals</p>
+          <p className="text-[#f4a7bb] text-xs tracking-[0.2em] uppercase font-bold mb-3">Shop Arrivals</p>
           <h2 className="text-3xl md:text-5xl font-serif font-semibold text-[#1a1a1a]">Latest in Store</h2>
         </div>
 
@@ -44,15 +40,15 @@ const StockSection = () => (
             transition={{ duration: 0.7, delay: i * 0.12 }}
             className="group bg-white rounded-2xl overflow-hidden border border-gray-100 hover:shadow-xl transition-all duration-500"
           >
-            <div className="relative aspect-[3/4] overflow-hidden bg-[#f5f0eb]">
+            <div className="relative aspect-[3/4] overflow-hidden bg-[#fce8ed]">
               <img src={item.img} alt={item.name} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" />
               <span className="absolute top-4 left-4 bg-[#1a1a1a] text-white text-[10px] tracking-[0.1em] uppercase px-3 py-1 rounded-full font-medium">
                 {item.tag}
               </span>
             </div>
             <div className="p-6 text-center">
-              <h3 className="text-base font-serif font-semibold text-[#1a1a1a] mb-4 group-hover:text-[#c4a77d] transition-colors uppercase tracking-widest">{item.name}</h3>
-              <Link to="/gallery" className="inline-flex items-center gap-2 text-xs tracking-[0.1em] uppercase font-semibold text-[#c4a77d] hover:text-[#1a1a1a] transition-colors group/link">
+              <h3 className="text-base font-serif font-semibold text-[#1a1a1a] mb-4 group-hover:text-[#f4a7bb] transition-colors uppercase tracking-widest">{item.name}</h3>
+              <Link to="/gallery" className="inline-flex items-center gap-2 text-xs tracking-[0.1em] uppercase font-semibold text-[#f4a7bb] hover:text-[#1a1a1a] transition-colors group/link">
                 View More
                 <ArrowRight size={13} className="group-hover/link:translate-x-1 transition-transform" />
               </Link>
@@ -66,7 +62,7 @@ const StockSection = () => (
 
 /* ── Store Banners ───────────────────────────────── */
 const StoreBanners = () => (
-  <section className="py-16 md:py-24 px-6 md:px-12 bg-white">
+  <section className="py-16 md:py-24 px-6 md:px-12 bg-transparent">
     <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
       {/* 1. Churithar */}
       <motion.div
@@ -74,7 +70,7 @@ const StoreBanners = () => (
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-50px" }}
         transition={{ duration: 0.8 }}
-        className="relative overflow-hidden rounded-2xl bg-[#e8c46d] min-h-[550px] group cursor-pointer"
+        className="relative overflow-hidden rounded-2xl bg-[#fbcfe8] min-h-[550px] group cursor-pointer"
       >
         <div className="absolute inset-0">
           <img src="/assets/C1.png" alt="Ladies Wear" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" loading="lazy" />
@@ -88,7 +84,7 @@ const StoreBanners = () => (
           <p className="text-white/70 text-sm mb-8 max-w-xs font-light">
             We have many varieties of Churidars available for ladies.
           </p>
-          <Link to="/gallery" className="inline-flex items-center gap-2 bg-white text-[#1a1a1a] px-6 py-3 rounded-full text-[10px] tracking-widest uppercase font-semibold w-fit hover:bg-[#c4a77d] hover:text-white transition-all group/btn">
+          <Link to="/gallery" className="inline-flex items-center gap-2 bg-white text-[#1a1a1a] px-6 py-3 rounded-full text-[10px] tracking-widest uppercase font-semibold w-fit hover:bg-[#f4a7bb] hover:text-white transition-all group/btn">
             View Collection <ArrowRight size={14} className="group-hover/btn:translate-x-1 transition-transform" />
           </Link>
         </div>
@@ -100,7 +96,7 @@ const StoreBanners = () => (
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-50px" }}
         transition={{ duration: 0.8, delay: 0.1 }}
-        className="relative overflow-hidden rounded-2xl bg-[#e8c46d] min-h-[550px] group cursor-pointer"
+        className="relative overflow-hidden rounded-2xl bg-[#fbcfe8] min-h-[550px] group cursor-pointer"
       >
         <div className="absolute inset-0">
           <img src="/assets/tops/h34.png" alt="Ladies Fashion" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" loading="lazy" />
@@ -114,7 +110,7 @@ const StoreBanners = () => (
           <p className="text-white/70 text-sm mb-8 max-w-xs font-light">
             Our shop handles various designs of pardha for women.
           </p>
-          <Link to="/gallery" className="inline-flex items-center gap-2 bg-white text-[#1a1a1a] px-6 py-3 rounded-full text-[10px] tracking-widest uppercase font-semibold w-fit hover:bg-[#c4a77d] hover:text-white transition-all group/btn">
+          <Link to="/gallery" className="inline-flex items-center gap-2 bg-white text-[#1a1a1a] px-6 py-3 rounded-full text-[10px] tracking-widest uppercase font-semibold w-fit hover:bg-[#f4a7bb] hover:text-white transition-all group/btn">
             View Collection <ArrowRight size={14} className="group-hover/btn:translate-x-1 transition-transform" />
           </Link>
         </div>
@@ -126,7 +122,7 @@ const StoreBanners = () => (
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-50px" }}
         transition={{ duration: 0.8, delay: 0.2 }}
-        className="relative overflow-hidden rounded-2xl bg-[#e8c46d] min-h-[550px] group cursor-pointer"
+        className="relative overflow-hidden rounded-2xl bg-[#fbcfe8] min-h-[550px] group cursor-pointer"
       >
         <div className="absolute inset-0">
           <img src="/assets/tops/h35.png" alt="Ladies Fashion" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" loading="lazy" />
@@ -140,7 +136,7 @@ const StoreBanners = () => (
           <p className="text-white/70 text-sm mb-8 max-w-xs font-light">
             Our shop handles various designs of Gowns for women.
           </p>
-          <Link to="/gallery" className="inline-flex items-center gap-2 bg-white text-[#1a1a1a] px-6 py-3 rounded-full text-[10px] tracking-widest uppercase font-semibold w-fit hover:bg-[#c4a77d] hover:text-white transition-all group/btn">
+          <Link to="/gallery" className="inline-flex items-center gap-2 bg-white text-[#1a1a1a] px-6 py-3 rounded-full text-[10px] tracking-widest uppercase font-semibold w-fit hover:bg-[#f4a7bb] hover:text-white transition-all group/btn">
             View Collection <ArrowRight size={14} className="group-hover/btn:translate-x-1 transition-transform" />
           </Link>
         </div>
@@ -152,7 +148,7 @@ const StoreBanners = () => (
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-50px" }}
         transition={{ duration: 0.8, delay: 0.3 }}
-        className="relative overflow-hidden rounded-2xl bg-[#e8c46d] min-h-[550px] group cursor-pointer"
+        className="relative overflow-hidden rounded-2xl bg-[#fbcfe8] min-h-[550px] group cursor-pointer"
       >
         <div className="absolute inset-0">
           <img src="/assets/tops/h31.png" alt="Ladies Fashion" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" loading="lazy" />
@@ -166,7 +162,7 @@ const StoreBanners = () => (
           <p className="text-white/70 text-sm mb-8 max-w-xs font-light">
             Our shop handles various designs of Hijabs for women.
           </p>
-          <Link to="/gallery" className="inline-flex items-center gap-2 bg-white text-[#1a1a1a] px-6 py-3 rounded-full text-[10px] tracking-widest uppercase font-semibold w-fit hover:bg-[#c4a77d] hover:text-white transition-all group/btn">
+          <Link to="/gallery" className="inline-flex items-center gap-2 bg-white text-[#1a1a1a] px-6 py-3 rounded-full text-[10px] tracking-widest uppercase font-semibold w-fit hover:bg-[#f4a7bb] hover:text-white transition-all group/btn">
             View Collection <ArrowRight size={14} className="group-hover/btn:translate-x-1 transition-transform" />
           </Link>
         </div>
@@ -178,7 +174,7 @@ const StoreBanners = () => (
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-50px" }}
         transition={{ duration: 0.8, delay: 0.4 }}
-        className="relative overflow-hidden rounded-2xl bg-[#e8c46d] min-h-[550px] group cursor-pointer"
+        className="relative overflow-hidden rounded-2xl bg-[#fbcfe8] min-h-[550px] group cursor-pointer"
       >
         <div className="absolute inset-0">
           <img src="/assets/maxi/M2.png" alt="Ladies Fashion" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" loading="lazy" />
@@ -192,7 +188,7 @@ const StoreBanners = () => (
           <p className="text-white/70 text-sm mb-8 max-w-xs font-light">
             Our shop handles various designs of Nighty for women.
           </p>
-          <Link to="/gallery" className="inline-flex items-center gap-2 bg-white text-[#1a1a1a] px-6 py-3 rounded-full text-[10px] tracking-widest uppercase font-semibold w-fit hover:bg-[#c4a77d] hover:text-white transition-all group/btn">
+          <Link to="/gallery" className="inline-flex items-center gap-2 bg-white text-[#1a1a1a] px-6 py-3 rounded-full text-[10px] tracking-widest uppercase font-semibold w-fit hover:bg-[#f4a7bb] hover:text-white transition-all group/btn">
             View Collection <ArrowRight size={14} className="group-hover/btn:translate-x-1 transition-transform" />
           </Link>
         </div>
@@ -204,7 +200,7 @@ const StoreBanners = () => (
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-50px" }}
         transition={{ duration: 0.8, delay: 0.5 }}
-        className="relative overflow-hidden rounded-2xl bg-[#e8c46d] min-h-[550px] group cursor-pointer"
+        className="relative overflow-hidden rounded-2xl bg-[#fbcfe8] min-h-[550px] group cursor-pointer"
       >
         <div className="absolute inset-0">
           <img src="/assets/tops/h36.png" alt="Ladies Fashion" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" loading="lazy" />
@@ -218,7 +214,7 @@ const StoreBanners = () => (
           <p className="text-white/70 text-sm mb-8 max-w-xs font-light">
             Our shop handles various designs of Shawls for women.
           </p>
-          <Link to="/gallery" className="inline-flex items-center gap-2 bg-white text-[#1a1a1a] px-6 py-3 rounded-full text-[10px] tracking-widest uppercase font-semibold w-fit hover:bg-[#c4a77d] hover:text-white transition-all group/btn">
+          <Link to="/gallery" className="inline-flex items-center gap-2 bg-white text-[#1a1a1a] px-6 py-3 rounded-full text-[10px] tracking-widest uppercase font-semibold w-fit hover:bg-[#f4a7bb] hover:text-white transition-all group/btn">
             View Collection <ArrowRight size={14} className="group-hover/btn:translate-x-1 transition-transform" />
           </Link>
         </div>
@@ -238,11 +234,11 @@ const InstagramSection = () => (
       transition={{ duration: 1 }}
       className="mb-10 text-left"
     >
-      <p className="text-[#c4a77d] text-[10px] tracking-[0.3em] uppercase font-bold mb-4">
+      <p className="text-[#f4a7bb] text-[10px] tracking-[0.3em] uppercase font-bold mb-4">
         Social
       </p>
       <h2 className="text-3xl md:text-4xl font-serif font-semibold text-[#1a1a1a] leading-tight">
-        Mehar <span className="italic font-light text-[#c4a77d]">Instagram</span>
+        Mehar <span className="italic font-light text-[#f4a7bb]">Instagram</span>
       </h2>
     </motion.div>
 
@@ -260,12 +256,12 @@ const InstagramSection = () => (
         className="relative"
       >
         <div className="absolute -inset-1 bg-linear-to-tr from-[#f09433] via-[#e6683c] via-[#dc2743] via-[#cc2366] to-[#bc1888] rounded-4xl opacity-20 group-hover:opacity-100 blur-sm transition-opacity duration-700" />
-        
-        <div className="relative aspect-video overflow-hidden rounded-3xl shadow-xl bg-[#faf8f5] border border-gray-100">
-          <img 
-            src='/assets/tops/logo1.png' 
-            alt="Mehar Official" 
-            className="w-full h-full object-contain p-8 transition-transform duration-1000 group-hover:scale-105" 
+
+        <div className="relative aspect-video overflow-hidden rounded-3xl shadow-xl bg-[#fff0f3] border border-gray-100">
+          <img
+            src='/assets/tops/logo1.png'
+            alt="Mehar Official"
+            className="w-full h-full object-contain p-8 transition-transform duration-1000 group-hover:scale-105"
           />
           <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-md px-4 py-2 rounded-full text-[10px] font-bold tracking-widest text-[#1a1a1a] shadow-sm transform translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
             @mehar_clothings
@@ -323,7 +319,7 @@ const TestimonialsSection = () => {
         className="flex items-end justify-between mb-10"
       >
         <div>
-          <p className="text-[#c4a77d] text-[10px] tracking-[0.2em] uppercase font-bold mb-4">Reviews</p>
+          <p className="text-[#f4a7bb] text-[10px] tracking-[0.2em] uppercase font-bold mb-4">Reviews</p>
           <h2 className="text-3xl md:text-4xl font-serif font-semibold text-[#1a1a1a]">Client Stories</h2>
         </div>
         <div className="flex gap-2">
@@ -350,7 +346,7 @@ const TestimonialsSection = () => {
         className="bg-white rounded-3xl p-6 md:p-10 shadow-xl shadow-black/5 border border-gray-50"
       >
         <div className="flex items-center gap-6 mb-6">
-          <div className="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden shrink-0 border-2 border-[#f5f0eb]">
+          <div className="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden shrink-0 border-2 border-[#fce8ed]">
             <img src={t.img} alt={t.name} className="w-full h-full object-cover" />
           </div>
           <div>
@@ -363,9 +359,9 @@ const TestimonialsSection = () => {
             <p className="text-[#999] text-[10px] uppercase font-medium tracking-widest">{t.role}</p>
           </div>
         </div>
-        
+
         <div className="relative">
-          <Quote size={32} className="text-[#c4a77d]/10 absolute -top-4 -left-2 rotate-180" />
+          <Quote size={32} className="text-[#f4a7bb]/10 absolute -top-4 -left-2 rotate-180" />
           <p className="text-[#555] text-sm md:text-base leading-relaxed font-light relative z-10 italic">
             "{t.text}"
           </p>
@@ -379,12 +375,12 @@ const TestimonialsSection = () => {
 /* ── Main Home Page ──────────────────────────────────── */
 export default function Home() {
   return (
-    <div className="bg-white w-full">
+    <div className="bg-[#fff5f8] w-full">
       <HeroSection />
       <StockSection />
       <ShopByCategory />
       <StoreBanners />
-      <section className="py-24 md:py-32 px-6 md:px-12 bg-[#faf8f5]">
+      <section className="py-24 md:py-32 px-6 md:px-12 bg-[#fff0f3]">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-24 items-stretch">
           <InstagramSection />
           <TestimonialsSection />

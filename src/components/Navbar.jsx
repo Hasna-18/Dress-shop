@@ -38,8 +38,8 @@ export default function Navbar() {
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         className={`sticky top-0 w-full z-50 transition-all duration-500 ${
           scrolled 
-            ? 'bg-white/98 backdrop-blur-xl shadow-[0_1px_0_0_rgba(0,0,0,0.05)] py-3' 
-            : 'bg-white py-5'
+            ? 'bg-[#fff5f8]/98 backdrop-blur-xl shadow-[0_1px_0_0_rgba(244,167,187,0.1)] py-3' 
+            : 'bg-[#fff5f8] py-5'
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
@@ -75,7 +75,7 @@ export default function Navbar() {
                 }`}
               >
                 {link.name}
-                <span className={`absolute -bottom-1 left-0 h-[1px] bg-[#1a1a1a] transition-all duration-300 ${
+                <span className={`absolute -bottom-1 left-0 h-[1px] bg-[#f4a7bb] transition-all duration-300 ${
                   location.pathname === link.href ? 'w-full' : 'w-0 group-hover:w-full'
                 }`}></span>
               </Link>
@@ -124,8 +124,8 @@ export default function Navbar() {
                   to={link.href}
                   className={`text-4xl font-serif transition-all duration-300 relative group ${
                     location.pathname === link.href 
-                      ? 'text-[#c4a77d]' 
-                      : 'text-[#1a1a1a] hover:text-[#c4a77d]'
+                      ? 'text-[#f4a7bb]' 
+                      : 'text-[#1a1a1a] hover:text-[#f4a7bb]'
                   }`}
                 >
                   {link.name}

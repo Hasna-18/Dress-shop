@@ -64,7 +64,7 @@ const ProductCard = ({ product }) => {
       onMouseLeave={() => setIsHovered(false)}
     >
       {/* Image Container */}
-      <div className="relative aspect-3/4 overflow-hidden rounded-xl bg-[#f5f0eb] mb-4">
+      <div className="relative aspect-3/4 overflow-hidden rounded-xl bg-[#fce8ed] mb-4">
         <img
           src={product.img}
           alt={product.name}
@@ -98,10 +98,10 @@ const ProductCard = ({ product }) => {
 
       {/* Product Info */}
       <div className="text-center">
-        <h3 className="text-sm font-medium text-[#1a1a1a] mb-1 group-hover:text-[#c4a77d] transition-colors uppercase tracking-wider">
+        <h3 className="text-sm font-medium text-[#1a1a1a] mb-1 group-hover:text-[#f4a7bb] transition-colors uppercase tracking-wider">
           {product.name}
         </h3>
-        <p className="text-[10px] text-[#999] tracking-[0.1em] uppercase">Available at Shop</p>
+        <p className="text-[10px] text-[#999] tracking-widest uppercase">Available at Shop</p>
       </div>
     </motion.div>
   );
@@ -115,7 +115,7 @@ const PromoSection = () => {
     : products.filter(p => p.category === activeFilter.toLowerCase());
 
   return (
-    <section className="py-16 md:py-24 px-6 md:px-12 bg-white">
+    <section className="py-16 md:py-24 px-6 md:px-12 bg-transparent">
       <div className="max-w-7xl mx-auto">
         
         {/* Section Header */}
@@ -126,7 +126,7 @@ const PromoSection = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-12 md:mb-16"
         >
-          <p className="text-[#c4a77d] text-xs tracking-[0.2em] uppercase font-medium mb-3">
+          <p className="text-[#f4a7bb] text-xs tracking-[0.2em] uppercase font-bold mb-3">
             Collectives
           </p>
           <h2 className="text-3xl md:text-5xl font-serif font-semibold text-[#1a1a1a] mb-4">
@@ -152,7 +152,7 @@ const PromoSection = () => {
               className={`px-5 md:px-8 py-2.5 text-sm tracking-[0.05em] rounded-full transition-all duration-300 ${
                 activeFilter === filter
                   ? 'bg-[#1a1a1a] text-white'
-                  : 'bg-[#f5f0eb] text-[#666] hover:bg-[#ebe4da] hover:text-[#1a1a1a]'
+                  : 'bg-[#fce8ed] text-[#666] hover:bg-[#f8d7df] hover:text-[#1a1a1a]'
               }`}
             >
               {filter}
