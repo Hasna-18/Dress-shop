@@ -4,30 +4,30 @@ import { ArrowRight } from "lucide-react";
 
 const categories = [
   {
-    name: "For Women's",
-    subtitle: "2500+ Items",
-    img: "/assets/C1.png",
+    name: "Hijab & Shawls",
+    subtitle: "Available Now",
+    img: "/assets/tops/h38.png",
     bg: "#f5ede4",
     size: "large",
   },
   {
-    name: "For Men's",
-    subtitle: "1800+ Items",
+    name: "Churidar & Partha",
+    subtitle: "New Varieties",
     img: "/assets/C3.png",
     bg: "#e8ddd0",
     size: "large",
   },
   {
-    name: "Accessories",
-    subtitle: "900+ Items",
-    img: "/assets/C5.png",
+    name: "Gowns",
+    subtitle: "Quality Wear",
+    img: "/assets/tops/h37.png",
     bg: "#f0e6d8",
     size: "small",
   },
   {
-    name: "Bags & Shoes",
-    subtitle: "600+ Items",
-    img: "/assets/C6.png",
+    name: "Maxi ",
+    subtitle: "Daily Wear",
+    img: "/assets/maxi/M13.png",
     bg: "#e5dcd2",
     size: "small",
   },
@@ -51,7 +51,7 @@ const ShopByCategory = () => {
               Categories
             </p>
             <h2 className="text-3xl md:text-5xl font-serif font-semibold text-[#1a1a1a] leading-tight">
-              Browse By Category
+              Collections
             </h2>
           </div>
           <Link 
@@ -82,7 +82,7 @@ const ShopByCategory = () => {
                   <p className="text-xs text-[#8a7560] tracking-[0.15em] uppercase mb-2">{item.subtitle}</p>
                   <h3 className="text-2xl md:text-3xl font-serif font-semibold text-[#1a1a1a] mb-6">{item.name}</h3>
                   <span className="inline-flex items-center gap-2 text-sm text-[#1a1a1a] border-b border-[#1a1a1a] pb-1 group-hover:gap-3 transition-all">
-                    Shop Now <ArrowRight size={14} />
+                    View Collection <ArrowRight size={14} />
                   </span>
                 </div>
                 {/* Image */}

@@ -22,10 +22,10 @@ export default function About() {
                 initial={{ y: "100%", opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
-                className="text-5xl sm:text-7xl md:text-8xl lg:text-[7vw] leading-[1.1] text-[#1a1a1a] font-serif font-semibold"
+                className="text-4xl sm:text-7xl md:text-8xl lg:text-[7vw] leading-[1.1] text-[#1a1a1a] font-serif font-semibold"
               >
                 About Our <br />
-                <span className="italic font-light text-[#c4a77d]">Studio</span>
+                <span className="italic font-light text-[#c4a77d]">Shop</span>
               </motion.h1>
             </div>
             <motion.p
@@ -34,7 +34,7 @@ export default function About() {
               transition={{ duration: 1, delay: 0.6 }}
               className="mt-8 text-[#666] text-base md:text-lg max-w-2xl mx-auto font-light leading-relaxed px-4"
             >
-              "Clothing." was founded on the belief that fashion should be a seamless blend of traditional artistry and modern elegance. We craft pieces that celebrate the individual spirit.
+              "Clothing." is a local shop where we provide a variety of ladies' wear. We focus on offering good quality Hijabs, Churidars, Shawls, and other ladies' garments for everyone.
             </motion.p>
           </div>
         </div>
@@ -71,16 +71,16 @@ export default function About() {
             </h2>
             <div className="space-y-6 text-[#555] font-light text-base md:text-lg leading-relaxed">
               <p>
-                Every garment at our studio is born from a meticulous process of research and artistry. We believe that what you wear is a reflection of your story — a blend of heritage and future.
+                We stock a wide collection of ladies' wear in our shop. We make sure to bring the latest varieties like Parthas, Gowns, and Nighties for our customers.
               </p>
               <div className="py-8 px-10 bg-[#faf8f5] rounded-3xl border border-gray-100 my-10 relative">
                 <QuoteIcon className="absolute top-6 left-6 text-[#c4a77d]/20 w-12 h-12" />
                 <p className="italic text-xl md:text-2xl text-[#1a1a1a] leading-tight font-serif">
-                  "At our core, we aren't just selling clothes; we're providing the armor of confidence and the grace of tradition for the modern woman."
+                  "Our goal is to provide quality ladies' clothing that is comfortable and stylish for every woman who visits our shop."
                 </p>
               </div>
               <p>
-                From limited edition bridal couture to our daily luxury collections, every piece undergoes rigorous quality checks to ensure the perfect fit and unparalleled comfort for years to come.
+                From daily wear Hijabs to special gowns and Churidars, we check all our stock to make sure the quality is good and the prices are fair for our customers.
               </p>
             </div>
           </motion.div>
@@ -97,10 +97,10 @@ export default function About() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              { icon: <ShieldCheck size={32} />, title: "Premium Quality", desc: "Sourcing only the finest materials for longevity and luxury feel." },
-              { icon: <Leaf size={32} />, title: "Sustainable", desc: "Mindful production processes that respect our planet and people." },
-              { icon: <Star size={32} />, title: "Artisan Made", desc: "Every stitch is placed by skilled craftsmen with decades of experience." },
-              { icon: <Heart size={32} />, title: "Client First", desc: "Personalized service tailored to your unique style and needs." },
+              { icon: <ShieldCheck size={32} />, title: "Good Quality", desc: "We select the best materials available for our customers." },
+              { icon: <Leaf size={32} />, title: "Best Selection", desc: "Many designs and varieties in Hijabs, Shawls and Gowns." },
+              { icon: <Star size={32} />, title: "Daily Arrivals", desc: "New stock of Parthas and Tops arriving regularly." },
+              { icon: <Heart size={32} />, title: "Customer Care", desc: "We help you find the right fit for your daily needs." },
             ].map((value, i) => (
               <motion.div
                 key={value.title}
@@ -133,12 +133,12 @@ export default function About() {
           >
             <div className="absolute top-0 right-0 w-64 h-64 bg-[#c4a77d]/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl" />
             <div className="relative z-10">
-              <h2 className="text-3xl md:text-5xl font-serif font-semibold italic mb-8">Ready to experience true luxury?</h2>
+              <h2 className="text-3xl md:text-5xl font-serif font-semibold italic mb-8">Visit our shop today!</h2>
               <p className="text-white/60 text-lg mb-12 font-light max-w-lg mx-auto">
-                Join thousands of women who have found their perfect style with us.
+                Join many women who trust our collection for their daily wear.
               </p>
               <a href="/gallery" className="inline-block bg-[#c4a77d] text-white px-14 py-5 rounded-full text-sm tracking-widest font-medium hover:bg-white hover:text-[#1a1a1a] transition-all duration-300">
-                EXPLORE COLLECTION
+                VIEW COLLECTION
               </a>
             </div>
           </motion.div>

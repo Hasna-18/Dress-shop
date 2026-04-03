@@ -7,7 +7,7 @@ const HeroSection = () => {
     <section className="relative bg-[#faf8f5] overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 md:px-12 py-16 md:py-20 lg:py-24">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center min-h-[70vh]">
-          
+
           {/* Left - Text Content */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
@@ -15,13 +15,13 @@ const HeroSection = () => {
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
             className="order-2 lg:order-1 text-center lg:text-left"
           >
-            <motion.p 
+            <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.6 }}
               className="text-[#c4a77d] text-sm tracking-[0.2em] uppercase font-medium mb-6"
             >
-              New Season Collection 2026
+              Ladies Wear Collection
             </motion.p>
 
             <div className="overflow-hidden mb-8">
@@ -29,22 +29,21 @@ const HeroSection = () => {
                 initial={{ y: "100%", opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
-                className="text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] leading-[1.05] text-[#1a1a1a] font-serif font-semibold"
+                className="text-4xl sm:text-6xl md:text-7xl lg:text-[5.5rem] leading-[1.05] text-[#1a1a1a] font-serif font-semibold"
               >
-                Step into<br />
-                <span className="italic font-light">Style:</span> Your<br />
-                Ultimate Fashion
+                Welcome to<br />
+                <span className="italic font-light">Our Shop:</span> For<br />
+                Ladies Fashion
               </motion.h1>
             </div>
 
-            <motion.p 
+            <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.7, duration: 0.6 }}
               className="text-[#666] text-base leading-relaxed max-w-md mx-auto lg:mx-0 mb-10 font-light"
             >
-              Discover our curated collection of timeless pieces designed for the modern woman. 
-              Premium fabrics, impeccable craftsmanship.
+              We sell Hijabs, Churidars, Shawls, Partha, Nighties, Tops, Ladies Shirts, and Gowns. Quality clothes for your everyday style.
             </motion.p>
 
             <motion.div
@@ -56,7 +55,7 @@ const HeroSection = () => {
                 to="/gallery"
                 className="inline-flex items-center gap-3 bg-[#1a1a1a] text-white px-10 py-4 text-sm tracking-[0.1em] hover:bg-[#333] transition-all duration-300 group"
               >
-                Shop Now
+                Discover Collections
                 <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform duration-300" />
               </Link>
             </motion.div>
@@ -69,9 +68,9 @@ const HeroSection = () => {
             transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
             className="order-1 lg:order-2 relative"
           >
-            <div className="relative w-full aspect-[3/4] max-w-lg mx-auto lg:max-w-full overflow-hidden rounded-t-[200px]">
+            <div className="relative w-full aspect-[3/4] max-w-lg mx-auto lg:max-w-full overflow-hidden rounded-t-[140px] sm:rounded-t-[200px]">
               <img
-                src="/assets/L1.png"
+                src="/assets/tops/h30.png"
                 className="w-full h-full object-cover"
                 loading="eager"
                 decoding="async"

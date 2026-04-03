@@ -6,46 +6,18 @@ import ShopByCategory from "../components/category";
 import HeroSection from "../components/herosection";
 import PromoSection from "../components/product";
 
-/* ── Feature Bar ────────────────────────────────────── */
-const features = [
-  { icon: <Truck size={28} strokeWidth={1.2} />, title: "Free Shipping", desc: "On orders above ₹999" },
-  { icon: <CreditCard size={28} strokeWidth={1.2} />, title: "Flexible Payment", desc: "Multiple payment methods" },
-  { icon: <Headphones size={28} strokeWidth={1.2} />, title: "24/7 Support", desc: "Dedicated customer care" },
+// removed FeatureBar as requested (not e-commerce)
+
+// removed FeatureBar component
+
+/* ── Stock Arrivals ────────────────────────────── */
+const stockItems = [
+  { name: "Daily Hijab", img: "/assets/tops/h31.png", tag: "New Stock" },
+  { name: "Ladies Churithar", img: "/assets/C2.png", tag: "Variety" },
+  { name: "Quality Shawl", img: "/assets/tops/h32.png", tag: "Hot" },
 ];
 
-const FeatureBar = () => (
-  <section className="py-10 md:py-14 px-6 md:px-12 bg-white border-b border-gray-100">
-    <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-      {features.map((f, i) => (
-        <motion.div
-          key={f.title}
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: i * 0.1 }}
-          className="flex items-center gap-5 justify-center md:justify-start"
-        >
-          <div className="w-14 h-14 rounded-full bg-[#f5f0eb] flex items-center justify-center text-[#c4a77d] shrink-0">
-            {f.icon}
-          </div>
-          <div>
-            <h4 className="text-sm font-semibold text-[#1a1a1a] tracking-[0.03em]">{f.title}</h4>
-            <p className="text-xs text-[#888] mt-0.5">{f.desc}</p>
-          </div>
-        </motion.div>
-      ))}
-    </div>
-  </section>
-);
-
-/* ── Deals of the Day ────────────────────────────────── */
-const deals = [
-  { name: "Boho Dress", price: "₹1,499", oldPrice: "₹2,999", rating: 4.8, img: "/assets/C1.png", discount: "50%" },
-  { name: "Modern Party Dress", price: "₹2,499", oldPrice: "₹4,299", rating: 4.9, img: "/assets/C2.png", discount: "42%" },
-  { name: "Cotton Casual Kurti", price: "₹899", oldPrice: "₹1,799", rating: 4.6, img: "/assets/C5.png", discount: "50%" },
-];
-
-const DealsSection = () => (
+const StockSection = () => (
   <section className="py-16 md:py-24 px-6 md:px-12 bg-[#faf8f5]">
     <div className="max-w-7xl mx-auto">
       <motion.div
@@ -56,46 +28,34 @@ const DealsSection = () => (
         className="flex flex-col md:flex-row md:items-end md:justify-between mb-12"
       >
         <div>
-          <p className="text-[#c4a77d] text-xs tracking-[0.2em] uppercase font-medium mb-3">Today Deals</p>
-          <h2 className="text-3xl md:text-5xl font-serif font-semibold text-[#1a1a1a]">Deals of the Day</h2>
+          <p className="text-[#c4a77d] text-xs tracking-[0.2em] uppercase font-medium mb-3">Shop Arrivals</p>
+          <h2 className="text-3xl md:text-5xl font-serif font-semibold text-[#1a1a1a]">Latest in Store</h2>
         </div>
-        <p className="text-[#888] text-sm mt-4 md:mt-0 max-w-sm">
-          Our set of daily, weekly and monthly are curated for those who like a great deal.
-        </p>
+
       </motion.div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {deals.map((deal, i) => (
+        {stockItems.map((item, i) => (
           <motion.div
-            key={deal.name}
+            key={item.name}
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.7, delay: i * 0.12 }}
-            className="group bg-white rounded-2xl overflow-hidden border border-gray-100 hover:shadow-xl transition-shadow duration-500"
+            className="group bg-white rounded-2xl overflow-hidden border border-gray-100 hover:shadow-xl transition-all duration-500"
           >
             <div className="relative aspect-[3/4] overflow-hidden bg-[#f5f0eb]">
-              <img src={deal.img} alt={deal.name} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" />
-              <span className="absolute top-4 left-4 bg-red-500 text-white text-[10px] tracking-[0.1em] uppercase px-3 py-1 rounded-full font-medium">
-                {deal.discount} Off
+              <img src={item.img} alt={item.name} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" />
+              <span className="absolute top-4 left-4 bg-[#1a1a1a] text-white text-[10px] tracking-[0.1em] uppercase px-3 py-1 rounded-full font-medium">
+                {item.tag}
               </span>
             </div>
-            <div className="p-5">
-              <div className="flex items-center gap-1 mb-2">
-                {[...Array(5)].map((_, j) => (
-                  <Star key={j} size={11} className={j < Math.floor(deal.rating) ? 'fill-[#f5a623] text-[#f5a623]' : 'text-gray-200'} />
-                ))}
-                <span className="text-[10px] text-[#999] ml-1">{deal.rating}</span>
-              </div>
-              <h3 className="text-sm font-medium text-[#1a1a1a] mb-2">{deal.name}</h3>
-              <div className="flex items-center gap-2 mb-4">
-                <span className="text-lg font-semibold text-[#1a1a1a]">{deal.price}</span>
-                <span className="text-sm text-[#999] line-through">{deal.oldPrice}</span>
-              </div>
-              <button className="w-full bg-[#1a1a1a] text-white py-3 rounded-lg text-xs tracking-[0.1em] uppercase font-medium hover:bg-[#333] transition-colors flex items-center justify-center gap-2 group/btn">
-                Shop Now
-                <ArrowRight size={13} className="group-hover/btn:translate-x-1 transition-transform" />
-              </button>
+            <div className="p-6 text-center">
+              <h3 className="text-base font-serif font-semibold text-[#1a1a1a] mb-4 group-hover:text-[#c4a77d] transition-colors uppercase tracking-widest">{item.name}</h3>
+              <Link to="/gallery" className="inline-flex items-center gap-2 text-xs tracking-[0.1em] uppercase font-semibold text-[#c4a77d] hover:text-[#1a1a1a] transition-colors group/link">
+                View More
+                <ArrowRight size={13} className="group-hover/link:translate-x-1 transition-transform" />
+              </Link>
             </div>
           </motion.div>
         ))}
@@ -104,56 +64,162 @@ const DealsSection = () => (
   </section>
 );
 
-/* ── Collection Banners (Men's & Women's) ──────────── */
-const CollectionBanners = () => (
+/* ── Store Banners ───────────────────────────────── */
+const StoreBanners = () => (
   <section className="py-16 md:py-24 px-6 md:px-12 bg-white">
-    <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
-      {/* Men's */}
+    <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {/* 1. Churithar */}
       <motion.div
-        initial={{ opacity: 0, x: -40 }}
-        whileInView={{ opacity: 1, x: 0 }}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-50px" }}
         transition={{ duration: 0.8 }}
-        className="relative overflow-hidden rounded-2xl bg-[#e8c46d] min-h-[400px] group cursor-pointer"
+        className="relative overflow-hidden rounded-2xl bg-[#e8c46d] min-h-[550px] group cursor-pointer"
       >
         <div className="absolute inset-0">
-          <img src="/assets/C3.png" alt="Men's Collection" className="w-full h-full object-cover opacity-80 transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+          <img src="/assets/C1.png" alt="Ladies Wear" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" loading="lazy" />
+          <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-500" />
         </div>
-        <div className="relative z-10 p-10 md:p-14 flex flex-col justify-end h-full bg-gradient-to-t from-black/50 to-transparent">
-          <p className="text-white/70 text-xs tracking-[0.15em] uppercase mb-2">Flat 25% Discount</p>
-          <h3 className="text-3xl md:text-4xl font-serif font-semibold text-white mb-4">
-            Men's Latest<br />Collection
+        <div className="relative z-10 p-8 h-full flex flex-col justify-end bg-linear-to-t from-black/80 via-black/20 to-transparent">
+          <p className="text-white/80 text-[10px] tracking-[0.2em] uppercase mb-2">New Arrival</p>
+          <h3 className="text-2xl md:text-3xl font-serif font-semibold text-white mb-4">
+            Churithar
           </h3>
-          <p className="text-white/60 text-sm mb-6 max-w-xs">
-            Lorem ipsum dolor sit amet, elit consectetur adipiscing elit.
+          <p className="text-white/70 text-sm mb-8 max-w-xs font-light">
+            We have many varieties of Churidars available for ladies.
           </p>
-          <Link to="/gallery" className="inline-flex items-center gap-2 bg-[#c4a77d] text-white px-6 py-3 rounded-lg text-xs tracking-[0.1em] uppercase font-medium w-fit hover:bg-[#b49770] transition-colors group/btn">
-            Shop Now <ArrowRight size={14} className="group-hover/btn:translate-x-1 transition-transform" />
+          <Link to="/gallery" className="inline-flex items-center gap-2 bg-white text-[#1a1a1a] px-6 py-3 rounded-full text-[10px] tracking-widest uppercase font-semibold w-fit hover:bg-[#c4a77d] hover:text-white transition-all group/btn">
+            View Collection <ArrowRight size={14} className="group-hover/btn:translate-x-1 transition-transform" />
           </Link>
         </div>
       </motion.div>
 
-      {/* Women's */}
+      {/* 2. Pardha */}
       <motion.div
-        initial={{ opacity: 0, x: 40 }}
-        whileInView={{ opacity: 1, x: 0 }}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-50px" }}
         transition={{ duration: 0.8, delay: 0.1 }}
-        className="relative overflow-hidden rounded-2xl bg-[#e8c46d] min-h-[400px] group cursor-pointer"
+        className="relative overflow-hidden rounded-2xl bg-[#e8c46d] min-h-[550px] group cursor-pointer"
       >
         <div className="absolute inset-0">
-          <img src="/assets/C4.png" alt="Women's Collection" className="w-full h-full object-cover opacity-80 transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+          <img src="/assets/tops/h34.png" alt="Ladies Fashion" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" loading="lazy" />
+          <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-500" />
         </div>
-        <div className="relative z-10 p-10 md:p-14 flex flex-col justify-end h-full bg-gradient-to-t from-black/50 to-transparent">
-          <p className="text-white/70 text-xs tracking-[0.15em] uppercase mb-2">Flat 25% Discount</p>
-          <h3 className="text-3xl md:text-4xl font-serif font-semibold text-white mb-4">
-            Women's Latest<br />Fashion
+        <div className="relative z-10 p-8 h-full flex flex-col justify-end bg-linear-to-t from-black/80 via-black/20 to-transparent">
+          <p className="text-white/80 text-[10px] tracking-[0.2em] uppercase mb-2">Popular</p>
+          <h3 className="text-2xl md:text-3xl font-serif font-semibold text-white mb-4">
+            Pardha
           </h3>
-          <p className="text-white/60 text-sm mb-6 max-w-xs">
-            Elevate your everyday style with our curated women's collection.
+          <p className="text-white/70 text-sm mb-8 max-w-xs font-light">
+            Our shop handles various designs of pardha for women.
           </p>
-          <Link to="/gallery" className="inline-flex items-center gap-2 bg-[#c4a77d] text-white px-6 py-3 rounded-lg text-xs tracking-[0.1em] uppercase font-medium w-fit hover:bg-[#b49770] transition-colors group/btn">
-            Shop Now <ArrowRight size={14} className="group-hover/btn:translate-x-1 transition-transform" />
+          <Link to="/gallery" className="inline-flex items-center gap-2 bg-white text-[#1a1a1a] px-6 py-3 rounded-full text-[10px] tracking-widest uppercase font-semibold w-fit hover:bg-[#c4a77d] hover:text-white transition-all group/btn">
+            View Collection <ArrowRight size={14} className="group-hover/btn:translate-x-1 transition-transform" />
+          </Link>
+        </div>
+      </motion.div>
+
+      {/* 3. Gowns */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-50px" }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+        className="relative overflow-hidden rounded-2xl bg-[#e8c46d] min-h-[550px] group cursor-pointer"
+      >
+        <div className="absolute inset-0">
+          <img src="/assets/tops/h35.png" alt="Ladies Fashion" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" loading="lazy" />
+          <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-500" />
+        </div>
+        <div className="relative z-10 p-8 h-full flex flex-col justify-end bg-linear-to-t from-black/80 via-black/20 to-transparent">
+          <p className="text-white/80 text-[10px] tracking-[0.2em] uppercase mb-2">New Selection</p>
+          <h3 className="text-2xl md:text-3xl font-serif font-semibold text-white mb-4">
+            Gowns
+          </h3>
+          <p className="text-white/70 text-sm mb-8 max-w-xs font-light">
+            Our shop handles various designs of Gowns for women.
+          </p>
+          <Link to="/gallery" className="inline-flex items-center gap-2 bg-white text-[#1a1a1a] px-6 py-3 rounded-full text-[10px] tracking-widest uppercase font-semibold w-fit hover:bg-[#c4a77d] hover:text-white transition-all group/btn">
+            View Collection <ArrowRight size={14} className="group-hover/btn:translate-x-1 transition-transform" />
+          </Link>
+        </div>
+      </motion.div>
+
+      {/* 4. Hijab */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-50px" }}
+        transition={{ duration: 0.8, delay: 0.3 }}
+        className="relative overflow-hidden rounded-2xl bg-[#e8c46d] min-h-[550px] group cursor-pointer"
+      >
+        <div className="absolute inset-0">
+          <img src="/assets/tops/h31.png" alt="Ladies Fashion" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" loading="lazy" />
+          <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-500" />
+        </div>
+        <div className="relative z-10 p-8 h-full flex flex-col justify-end bg-linear-to-t from-black/80 via-black/20 to-transparent">
+          <p className="text-white/80 text-[10px] tracking-[0.2em] uppercase mb-2">Essential</p>
+          <h3 className="text-2xl md:text-3xl font-serif font-semibold text-white mb-4">
+            Hijab
+          </h3>
+          <p className="text-white/70 text-sm mb-8 max-w-xs font-light">
+            Our shop handles various designs of Hijabs for women.
+          </p>
+          <Link to="/gallery" className="inline-flex items-center gap-2 bg-white text-[#1a1a1a] px-6 py-3 rounded-full text-[10px] tracking-widest uppercase font-semibold w-fit hover:bg-[#c4a77d] hover:text-white transition-all group/btn">
+            View Collection <ArrowRight size={14} className="group-hover/btn:translate-x-1 transition-transform" />
+          </Link>
+        </div>
+      </motion.div>
+
+      {/* 5. Nighty */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-50px" }}
+        transition={{ duration: 0.8, delay: 0.4 }}
+        className="relative overflow-hidden rounded-2xl bg-[#e8c46d] min-h-[550px] group cursor-pointer"
+      >
+        <div className="absolute inset-0">
+          <img src="/assets/maxi/M2.png" alt="Ladies Fashion" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" loading="lazy" />
+          <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-500" />
+        </div>
+        <div className="relative z-10 p-8 h-full flex flex-col justify-end bg-linear-to-t from-black/80 via-black/20 to-transparent">
+          <p className="text-white/80 text-[10px] tracking-[0.2em] uppercase mb-2">Comfort</p>
+          <h3 className="text-2xl md:text-3xl font-serif font-semibold text-white mb-4">
+            Nighty
+          </h3>
+          <p className="text-white/70 text-sm mb-8 max-w-xs font-light">
+            Our shop handles various designs of Nighty for women.
+          </p>
+          <Link to="/gallery" className="inline-flex items-center gap-2 bg-white text-[#1a1a1a] px-6 py-3 rounded-full text-[10px] tracking-widest uppercase font-semibold w-fit hover:bg-[#c4a77d] hover:text-white transition-all group/btn">
+            View Collection <ArrowRight size={14} className="group-hover/btn:translate-x-1 transition-transform" />
+          </Link>
+        </div>
+      </motion.div>
+
+      {/* 6. Shawls */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-50px" }}
+        transition={{ duration: 0.8, delay: 0.5 }}
+        className="relative overflow-hidden rounded-2xl bg-[#e8c46d] min-h-[550px] group cursor-pointer"
+      >
+        <div className="absolute inset-0">
+          <img src="/assets/tops/h36.png" alt="Ladies Fashion" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" loading="lazy" />
+          <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-500" />
+        </div>
+        <div className="relative z-10 p-8 h-full flex flex-col justify-end bg-linear-to-t from-black/80 via-black/20 to-transparent">
+          <p className="text-white/80 text-[10px] tracking-[0.2em] uppercase mb-2">Trending</p>
+          <h3 className="text-2xl md:text-3xl font-serif font-semibold text-white mb-4">
+            Shawls
+          </h3>
+          <p className="text-white/70 text-sm mb-8 max-w-xs font-light">
+            Our shop handles various designs of Shawls for women.
+          </p>
+          <Link to="/gallery" className="inline-flex items-center gap-2 bg-white text-[#1a1a1a] px-6 py-3 rounded-full text-[10px] tracking-widest uppercase font-semibold w-fit hover:bg-[#c4a77d] hover:text-white transition-all group/btn">
+            View Collection <ArrowRight size={14} className="group-hover/btn:translate-x-1 transition-transform" />
           </Link>
         </div>
       </motion.div>
@@ -162,50 +228,52 @@ const CollectionBanners = () => (
 );
 
 /* ── Instagram Section ────────────────────────────────── */
-const instagramImages = [
-  "/assets/C1.png",
-  "/assets/C2.png",
-  "/assets/C5.png",
-  "/assets/C6.png",
-  "/assets/maxi/M11.png",
-  "/assets/C4.png",
-];
 
 const InstagramSection = () => (
-  <section className="py-16 md:py-24 px-6 md:px-12 bg-[#faf8f5]">
-    <div className="max-w-7xl mx-auto">
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
-        className="text-center mb-12"
-      >
-        <p className="text-[#c4a77d] text-xs tracking-[0.2em] uppercase font-medium mb-3">Follow Us</p>
-        <h2 className="text-3xl md:text-5xl font-serif font-semibold text-[#1a1a1a]">Follow Us On Instagram</h2>
-      </motion.div>
+  <div className="h-full flex flex-col justify-center">
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 1 }}
+      className="mb-10 text-left"
+    >
+      <p className="text-[#c4a77d] text-[10px] tracking-[0.3em] uppercase font-bold mb-4">
+        Social
+      </p>
+      <h2 className="text-3xl md:text-4xl font-serif font-semibold text-[#1a1a1a] leading-tight">
+        Mehar <span className="italic font-light text-[#c4a77d]">Instagram</span>
+      </h2>
+    </motion.div>
 
-      <div className="grid grid-cols-3 md:grid-cols-6 gap-3">
-        {instagramImages.map((img, i) => (
-          <motion.div
-            key={i}
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: i * 0.06 }}
-            className="aspect-square overflow-hidden rounded-xl group cursor-pointer relative"
-          >
-            <img src={img} alt={`Instagram ${i + 1}`} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" />
-            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-300 flex items-center justify-center">
-              <svg className="w-6 h-6 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-              </svg>
-            </div>
-          </motion.div>
-        ))}
-      </div>
-    </div>
-  </section>
+    <a
+      href="https://www.instagram.com/mehar_clothings"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="block group"
+    >
+      <motion.div
+        initial={{ opacity: 0, scale: 0.95 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+        className="relative"
+      >
+        <div className="absolute -inset-1 bg-linear-to-tr from-[#f09433] via-[#e6683c] via-[#dc2743] via-[#cc2366] to-[#bc1888] rounded-4xl opacity-20 group-hover:opacity-100 blur-sm transition-opacity duration-700" />
+        
+        <div className="relative aspect-video overflow-hidden rounded-3xl shadow-xl bg-[#faf8f5] border border-gray-100">
+          <img 
+            src='/assets/tops/logo1.png' 
+            alt="Mehar Official" 
+            className="w-full h-full object-contain p-8 transition-transform duration-1000 group-hover:scale-105" 
+          />
+          <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-md px-4 py-2 rounded-full text-[10px] font-bold tracking-widest text-[#1a1a1a] shadow-sm transform translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+            @mehar_clothings
+          </div>
+        </div>
+      </motion.div>
+    </a>
+  </div>
 );
 
 /* ── Testimonials ────────────────────────────────────── */
@@ -246,130 +314,66 @@ const TestimonialsSection = () => {
   const t = testimonials[current];
 
   return (
-    <section className="py-16 md:py-24 px-6 md:px-12 bg-white">
-      <div className="max-w-7xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="flex flex-col md:flex-row md:items-end md:justify-between mb-12"
-        >
-          <div>
-            <p className="text-[#c4a77d] text-xs tracking-[0.2em] uppercase font-medium mb-3">Testimonial</p>
-            <h2 className="text-3xl md:text-5xl font-serif font-semibold text-[#1a1a1a]">What Our Clients Say</h2>
-          </div>
-          <div className="flex gap-3 mt-4 md:mt-0">
-            <button
-              onClick={() => setCurrent((current - 1 + testimonials.length) % testimonials.length)}
-              className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-[#1a1a1a] hover:bg-[#1a1a1a] hover:text-white transition-all"
-            >
-              <ChevronLeft size={16} />
-            </button>
-            <button
-              onClick={() => setCurrent((current + 1) % testimonials.length)}
-              className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-[#1a1a1a] hover:bg-[#1a1a1a] hover:text-white transition-all"
-            >
-              <ChevronRight size={16} />
-            </button>
-          </div>
-        </motion.div>
-
-        <motion.div
-          key={current}
-          initial={{ opacity: 0, x: 30 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5 }}
-          className="bg-[#faf8f5] rounded-2xl p-8 md:p-12 flex flex-col md:flex-row items-center gap-8 md:gap-12"
-        >
-          {/* Avatar */}
-          <div className="w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden shrink-0 border-4 border-white shadow-lg">
-            <img src={t.img} alt={t.name} className="w-full h-full object-cover" />
-          </div>
-
-          {/* Content */}
-          <div className="flex-1 text-center md:text-left">
-            <div className="flex items-center gap-1 justify-center md:justify-start mb-4">
-              <Quote size={24} className="text-[#c4a77d] rotate-180 mr-2" />
-              {[...Array(5)].map((_, j) => (
-                <Star key={j} size={14} className={j < t.rating ? 'fill-[#f5a623] text-[#f5a623]' : 'text-gray-200'} />
-              ))}
-              <span className="text-sm text-[#999] ml-2">{t.rating}.0</span>
-            </div>
-            <p className="text-[#555] text-base leading-relaxed mb-6 font-light">{t.text}</p>
-            <div>
-              <p className="text-[#1a1a1a] font-semibold text-sm">{t.name}</p>
-              <p className="text-[#999] text-xs">{t.role}</p>
-            </div>
-          </div>
-        </motion.div>
-      </div>
-    </section>
-  );
-};
-
-/* ── News & Blogs ────────────────────────────────────── */
-const blogs = [
-  {
-    title: "Your Ultimate Guide to Healthy Living",
-    date: "March 15, 2026",
-    category: "Fashion",
-    img: "/assets/C4.png",
-  },
-  {
-    title: "The Best Body Care Products That You'll Love",
-    date: "March 12, 2026",
-    category: "Lifestyle",
-    img: "/assets/maxi/M10.png",
-  },
-  {
-    title: "Why Eco-Friendly Products are Essential",
-    date: "March 10, 2026",
-    category: "Sustainable",
-    img: "/assets/C6.png",
-  },
-];
-
-const BlogSection = () => (
-  <section className="py-16 md:py-24 px-6 md:px-12 bg-white">
-    <div className="max-w-7xl mx-auto">
+    <div className="flex flex-col justify-center h-full">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
-        className="text-center mb-12"
+        className="flex items-end justify-between mb-10"
       >
-        <p className="text-[#c4a77d] text-xs tracking-[0.2em] uppercase font-medium mb-3">News & Blog</p>
-        <h2 className="text-3xl md:text-5xl font-serif font-semibold text-[#1a1a1a]">Our Latest News & Blogs</h2>
+        <div>
+          <p className="text-[#c4a77d] text-[10px] tracking-[0.2em] uppercase font-bold mb-4">Reviews</p>
+          <h2 className="text-3xl md:text-4xl font-serif font-semibold text-[#1a1a1a]">Client Stories</h2>
+        </div>
+        <div className="flex gap-2">
+          <button
+            onClick={() => setCurrent((current - 1 + testimonials.length) % testimonials.length)}
+            className="w-8 h-8 rounded-full border border-gray-200 flex items-center justify-center text-[#1a1a1a] hover:bg-[#1a1a1a] hover:text-white transition-all"
+          >
+            <ChevronLeft size={14} />
+          </button>
+          <button
+            onClick={() => setCurrent((current + 1) % testimonials.length)}
+            className="w-8 h-8 rounded-full border border-gray-200 flex items-center justify-center text-[#1a1a1a] hover:bg-[#1a1a1a] hover:text-white transition-all"
+          >
+            <ChevronRight size={14} />
+          </button>
+        </div>
       </motion.div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {blogs.map((blog, i) => (
-          <motion.article
-            key={blog.title}
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7, delay: i * 0.1 }}
-            className="group cursor-pointer"
-          >
-            <div className="aspect-[4/3] overflow-hidden rounded-xl mb-5">
-              <img src={blog.img} alt={blog.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" />
+      <motion.div
+        key={current}
+        initial={{ opacity: 0, x: 20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.5 }}
+        className="bg-white rounded-3xl p-6 md:p-10 shadow-xl shadow-black/5 border border-gray-50"
+      >
+        <div className="flex items-center gap-6 mb-6">
+          <div className="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden shrink-0 border-2 border-[#f5f0eb]">
+            <img src={t.img} alt={t.name} className="w-full h-full object-cover" />
+          </div>
+          <div>
+            <div className="flex items-center gap-1 mb-1">
+              {[...Array(5)].map((_, j) => (
+                <Star key={j} size={12} className={j < t.rating ? 'fill-[#f5a623] text-[#f5a623]' : 'text-gray-200'} />
+              ))}
             </div>
-            <div className="flex items-center gap-3 mb-3">
-              <span className="text-[10px] uppercase tracking-[0.15em] text-[#c4a77d] font-medium bg-[#c4a77d]/10 px-3 py-1 rounded-full">{blog.category}</span>
-              <span className="text-xs text-[#999]">{blog.date}</span>
-            </div>
-            <h3 className="text-lg font-serif font-semibold text-[#1a1a1a] group-hover:text-[#c4a77d] transition-colors leading-snug">
-              {blog.title}
-            </h3>
-          </motion.article>
-        ))}
-      </div>
+            <p className="text-[#1a1a1a] font-bold text-sm tracking-tight">{t.name}</p>
+            <p className="text-[#999] text-[10px] uppercase font-medium tracking-widest">{t.role}</p>
+          </div>
+        </div>
+        
+        <div className="relative">
+          <Quote size={32} className="text-[#c4a77d]/10 absolute -top-4 -left-2 rotate-180" />
+          <p className="text-[#555] text-sm md:text-base leading-relaxed font-light relative z-10 italic">
+            "{t.text}"
+          </p>
+        </div>
+      </motion.div>
     </div>
-  </section>
-);
+  );
+};
 
 
 /* ── Main Home Page ──────────────────────────────────── */
@@ -377,14 +381,15 @@ export default function Home() {
   return (
     <div className="bg-white w-full">
       <HeroSection />
-      <FeatureBar />
-      <DealsSection />
+      <StockSection />
       <ShopByCategory />
-      <CollectionBanners />
-      <PromoSection />
-      <InstagramSection />
-      <TestimonialsSection />
-      <BlogSection />
+      <StoreBanners />
+      <section className="py-24 md:py-32 px-6 md:px-12 bg-[#faf8f5]">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-24 items-stretch">
+          <InstagramSection />
+          <TestimonialsSection />
+        </div>
+      </section>
     </div>
   );
 }

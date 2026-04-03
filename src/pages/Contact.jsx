@@ -35,7 +35,7 @@ export default function Contact() {
             transition={{ duration: 1, delay: 0.2 }}
             className="text-4xl md:text-7xl font-serif font-semibold text-[#1a1a1a] mb-6"
           >
-            Connect With Our <span className="italic font-light">Studio</span>
+            Connect With Our <span className="italic font-light">Shop</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0 }}
@@ -43,7 +43,7 @@ export default function Contact() {
             transition={{ duration: 1, delay: 0.5 }}
             className="text-[#666] text-base md:text-lg max-w-xl mx-auto font-light leading-relaxed px-4"
           >
-            Whether you have a question about our collections or need a personalized styling session, we're here to help.
+            If you have any questions about our clothes or need help finding something, please feel free to contact us.
           </motion.p>
         </div>
       </section>
@@ -86,7 +86,7 @@ export default function Contact() {
                   <MapPin size={20} />
                 </div>
                 <div>
-                  <h4 className="text-sm font-semibold text-[#1a1a1a] uppercase tracking-wider mb-1">Our Studio</h4>
+                  <h4 className="text-sm font-semibold text-[#1a1a1a] uppercase tracking-wider mb-1">Our Shop</h4>
                   <p className="text-[#666] font-light">123 Fashion Street, Mumbai, Maharashtra 400001</p>
                 </div>
               </div>
@@ -103,7 +103,7 @@ export default function Contact() {
             </div>
 
             <div className="mt-16 relative aspect-video rounded-[30px] overflow-hidden shadow-2xl grayscale hover:grayscale-0 transition-all duration-700">
-               <img src="/assets/C6.png" alt="Our Studio Location" className="w-full h-full object-cover" />
+               <img src="/assets/C6.png" alt="Our Shop Location" className="w-full h-full object-cover" />
                <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
                  <button className="bg-white text-[#1a1a1a] px-8 py-3 rounded-full text-xs tracking-widest font-medium uppercase shadow-lg">Get Directions</button>
                </div>

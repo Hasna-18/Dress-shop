@@ -24,27 +24,13 @@ export default function Navbar() {
 
   const navLinks = [
     { name: 'Home', href: '/' },
-    { name: 'Shop', href: '/gallery' },
+    { name: 'Collections', href: '/gallery' },
     { name: 'About', href: '/about' },
     { name: 'Contact', href: '/contact' },
   ];
 
   return (
     <>
-      {/* Top Promotional Bar */}
-      <div className="bg-[#1a1a1a] text-white py-2.5 text-center text-xs tracking-[0.15em] font-light overflow-hidden relative z-[60]">
-        <div className="flex whitespace-nowrap animate-[marquee_20s_linear_infinite]">
-          <span className="mx-8">✦ 50% OFF Summer Super Sale ✦</span>
-          <span className="mx-8">Free Delivery On Orders Above ₹999</span>
-          <span className="mx-8">✦ New Arrivals Every Week ✦</span>
-          <span className="mx-8">Use Code MEHAR20 for Extra 20% Off</span>
-          <span className="mx-8">✦ 50% OFF Summer Super Sale ✦</span>
-          <span className="mx-8">Free Delivery On Orders Above ₹999</span>
-          <span className="mx-8">✦ New Arrivals Every Week ✦</span>
-          <span className="mx-8">Use Code MEHAR20 for Extra 20% Off</span>
-        </div>
-      </div>
-
       {/* Main Navigation */}
       <motion.nav 
         initial={{ y: -100 }}
@@ -73,7 +59,7 @@ export default function Navbar() {
             to="/" 
             className="absolute left-1/2 -translate-x-1/2 md:static md:translate-x-0 text-2xl md:text-3xl font-serif font-semibold text-[#1a1a1a] tracking-[0.08em] hover:opacity-70 transition-opacity"
           >
-            Clothing.
+            Mehar
           </Link>
 
           {/* Desktop Nav Links */}

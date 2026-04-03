@@ -62,3 +62,11 @@ html, body {
   background: #c4a77d40;
   color: #1a1a1a;
 }
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

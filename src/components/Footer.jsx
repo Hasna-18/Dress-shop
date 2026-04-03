@@ -50,9 +50,9 @@ export default function Footer() {
           
           {/* Brand */}
           <div className="lg:col-span-1">
-            <h2 className="text-3xl font-serif font-semibold mb-6 tracking-[0.05em]">Clothing.</h2>
+            <h2 className="text-3xl font-serif font-semibold mb-6 tracking-[0.05em]">Mehar</h2>
             <p className="text-white/50 text-sm leading-relaxed mb-8 max-w-xs">
-              Your ultimate fashion destination. We bring the latest trends with premium quality and impeccable craftsmanship.
+              Welcome to our shop. We have a wide variety of Hijabs, Shawls, Churidars, Partha, Nighties, Gowns, Tops and Shirts for ladies.
             </p>
             <div className="flex gap-3">
               {[
@@ -78,10 +78,10 @@ export default function Footer() {
             <ul className="space-y-3">
               {[
                 { name: "Home", href: "/" },
-                { name: "Shop", href: "/gallery" },
+                { name: "Collections", href: "/gallery" },
                 { name: "About Us", href: "/about" },
                 { name: "Contact", href: "/contact" },
-                { name: "New Arrivals", href: "/gallery" },
+                { name: "Latest Style", href: "/gallery" },
               ].map((link) => (
                 <li key={link.name}>
                   <Link to={link.href} className="text-white/40 text-sm hover:text-[#c4a77d] transition-colors">
@@ -96,7 +96,7 @@ export default function Footer() {
           <div>
             <h4 className="text-sm font-medium uppercase tracking-[0.15em] mb-6 text-white/80">Customer Service</h4>
             <ul className="space-y-3">
-              {["FAQ", "Shipping & Returns", "Size Guide", "Track Order", "Privacy Policy"].map((item) => (
+              {["FAQ", "Style Guide", "Visit Us", "Privacy Policy"].map((item) => (
                 <li key={item}>
                   <a href="#" className="text-white/40 text-sm hover:text-[#c4a77d] transition-colors">
                     {item}
@@ -131,7 +131,7 @@ export default function Footer() {
       <div className="border-t border-white/10">
         <div className="max-w-7xl mx-auto px-6 md:px-12 py-6 flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-white/30 text-xs tracking-wide">
-            &copy; {new Date().getFullYear()} Clothing. All rights reserved.
+            &copy; {new Date().getFullYear()} Mehar. All rights reserved.
           </p>
           <div className="flex gap-6">
             {["Privacy Policy", "Terms of Service", "Cookie Policy"].map((item) => (
