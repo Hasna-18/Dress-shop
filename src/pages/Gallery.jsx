@@ -38,7 +38,6 @@ export default function Gallery() {
     // Partha
     { id: 23, src: "/assets/tops/h34.png", category: "partha", title: "Classic Abaya" },
     { id: 24, src: "/assets/maxi/M7.png", category: "partha", title: "Modern Pardha" },
-    { id: 25, src: "/assets/maxi/M5.png", category: "partha", title: "Stylized Abaya" },
     { id: 26, src: "/assets/C10.png", category: "partha", title: "Black Pardha" },
 
     // Hijab
@@ -59,6 +58,39 @@ export default function Gallery() {
     { id: 37, src: "/assets/maxi/M3.png", category: "gowns", title: "Soft Silk Gown" },
     { id: 38, src: "/assets/maxi/M11.png", category: "gowns", title: "Fancy Gown" },
     { id: 39, src: "/assets/maxi/M13.png", category: "gowns", title: "Party Gown" },
+
+
+    { id: 40, src: "/assets/dress/d1.jpeg", category: "gowns", title: "Evening Gown" },
+    { id: 41, src: "/assets/dress/d2.jpeg", category: "gowns", title: "Soft Silk Gown" },
+    { id: 42, src: "/assets/dress/d3.jpeg", category: "gowns", title: "Fancy Gown" },
+    { id: 43, src: "/assets/dress/d4.jpeg", category: "gowns", title: "Party Gown" },
+
+    { id: 44, src: "/assets/dress/d5.jpeg", category: "gowns", title: "Elegant Gown" },
+    { id: 45, src: "/assets/dress/d6.jpeg", category: "gowns", title: "Classic Gown" },
+    { id: 46, src: "/assets/dress/d7.jpeg", category: "gowns", title: "Designer Gown" },
+    { id: 47, src: "/assets/dress/d8.jpeg", category: "gowns", title: "Luxury Gown" },
+    { id: 48, src: "/assets/dress/d9.jpeg", category: "gowns", title: "Floral Gown" },
+    { id: 49, src: "/assets/dress/d10.jpeg", category: "gowns", title: "Modern Gown" },
+    { id: 50, src: "/assets/dress/d11.jpeg", category: "gowns", title: "Chic Gown" },
+    { id: 51, src: "/assets/dress/d12.jpeg", category: "gowns", title: "Graceful Gown" },
+    { id: 52, src: "/assets/dress/d13.jpeg", category: "gowns", title: "Stylish Gown" },
+    { id: 53, src: "/assets/dress/d14.jpeg", category: "gowns", title: "Premium Gown" },
+    { id: 54, src: "/assets/dress/d15.jpeg", category: "gowns", title: "Royal Gown" },
+    { id: 55, src: "/assets/dress/d16.jpeg", category: "gowns", title: "Embellished Gown" },
+    { id: 56, src: "/assets/dress/d17.jpeg", category: "gowns", title: "Pleated Gown" },
+    { id: 57, src: "/assets/dress/d18.jpeg", category: "gowns", title: "Satin Gown" },
+    { id: 58, src: "/assets/dress/d19.jpeg", category: "gowns", title: "Velvet Gown" },
+    { id: 59, src: "/assets/dress/d20.jpeg", category: "gowns", title: "Lace Gown" },
+    { id: 60, src: "/assets/dress/d21.jpeg", category: "gowns", title: "Beaded Gown" },
+    { id: 61, src: "/assets/dress/d22.jpeg", category: "gowns", title: "Layered Gown" },
+    { id: 62, src: "/assets/dress/d23.jpeg", category: "gowns", title: "A-line Gown" },
+    { id: 63, src: "/assets/dress/d24.jpeg", category: "gowns", title: "Mermaid Gown" },
+    { id: 64, src: "/assets/dress/d25.jpeg", category: "gowns", title: "Ball Gown" },
+    { id: 65, src: "/assets/dress/d26.jpeg", category: "gowns", title: "Off-Shoulder Gown" },
+    { id: 66, src: "/assets/dress/d27.jpeg", category: "gowns", title: "Strapless Gown" },
+    { id: 67, src: "/assets/dress/d28.jpeg", category: "gowns", title: "Long Sleeve Gown" },
+    { id: 68, src: "/assets/dress/d29.jpeg", category: "gowns", title: "Minimal Gown" },
+    { id: 69, src: "/assets/dress/d30.jpeg", category: "gowns", title: "Signature Gown" },
   ];
 
   const filters = [
@@ -109,11 +141,10 @@ export default function Gallery() {
               <button
                 key={filter.key}
                 onClick={() => setActiveFilter(filter.key)}
-                className={`px-6 py-2.5 text-[13px] tracking-wide rounded-full transition-all duration-300 whitespace-nowrap ${
-                  activeFilter === filter.key
+                className={`px-6 py-2.5 text-[13px] tracking-wide rounded-full transition-all duration-300 whitespace-nowrap ${activeFilter === filter.key
                     ? "bg-[#1a1a1a] text-white shadow-lg shadow-black/10"
                     : "bg-[#f5f0eb] text-[#666] hover:bg-[#ebe4da] hover:text-[#1a1a1a]"
-                }`}
+                  }`}
               >
                 {filter.label}
               </button>
@@ -147,9 +178,9 @@ export default function Gallery() {
                     loading="lazy"
                     className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
                   />
-                  
+
                   <div className="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  
+
                   <div className="absolute bottom-0 left-0 p-4 md:p-6 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
                     <p className="text-white text-base md:text-lg font-serif font-semibold">{img.title}</p>
                     <p className="text-white/70 text-[9px] tracking-[0.15em] uppercase mt-1">{img.category}</p>
@@ -171,7 +202,7 @@ export default function Gallery() {
             className="fixed inset-0 z-100 flex items-center justify-center bg-black/95 p-4 md:p-10"
             onClick={() => setSelectedImage(null)}
           >
-            <button 
+            <button
               className="absolute top-6 right-6 text-white/50 hover:text-white transition-colors z-110"
               onClick={() => setSelectedImage(null)}
             >
