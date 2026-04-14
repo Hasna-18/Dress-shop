@@ -11,7 +11,7 @@ export default function Contact() {
 
   const getWhatsAppLink = () => {
     const text = encodeURIComponent(
-      `Hi, I would like to know more about your collection.\n\nName: ${ name } \nEmail: ${ email } \nMessage: ${ message } `
+      `Hi, I would like to know more about your collection.\n\nName: ${name} \nEmail: ${email} \nMessage: ${message} `
     );
     return `https://api.whatsapp.com/send?phone=${phone}&text=${text}`;
   };
@@ -29,7 +29,7 @@ export default function Contact() {
           >
             Get In Touch
           </motion.p>
-          <motion.h1 
+          <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.2 }}
@@ -50,7 +50,7 @@ export default function Contact() {
 
       <section className="py-20 md:py-32 px-6 md:px-12 backdrop-blur-sm relative z-10">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-24 items-start">
-          
+
           {/* CONTACT INFO */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -59,7 +59,7 @@ export default function Contact() {
             transition={{ duration: 1 }}
           >
             <h2 className="text-3xl md:text-5xl font-serif font-semibold text-[#1a1a1a] mb-12">Contact Information</h2>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
               <div className="space-y-4">
                 <div className="w-12 h-12 bg-[#faf8f5] rounded-xl flex items-center justify-center text-[#c4a77d]">
@@ -103,10 +103,10 @@ export default function Contact() {
             </div>
 
             <div className="mt-16 relative aspect-video rounded-[30px] overflow-hidden shadow-2xl grayscale hover:grayscale-0 transition-all duration-700">
-               <img src="/assets/C6.png" alt="Our Shop Location" className="w-full h-full object-cover" />
-               <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
-                 <button className="bg-white text-[#1a1a1a] px-8 py-3 rounded-full text-xs tracking-widest font-medium uppercase shadow-lg">Get Directions</button>
-               </div>
+              <img src="/assets/dress/contact.jpeg" alt="Our Shop Location" className="w-full h-full object-cover" />
+              <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
+                <button className="bg-white text-[#1a1a1a] px-8 py-3 rounded-full text-xs tracking-widest font-medium uppercase shadow-lg">Get Directions</button>
+              </div>
             </div>
           </motion.div>
 
