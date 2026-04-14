@@ -57,12 +57,12 @@ export default function Gallery() {
     { id: 41, src: "/assets/dress/d11.jpeg", category: "gowns", title: "Green Saree Style Dress" },
     { id: 42, src: "/assets/dress/d12.jpeg", category: "gowns", title: "Black Printed Dress" },
     { id: 43, src: "/assets/dress/d13.jpeg", category: "gowns", title: "Blue Dupatta Dress" },
-    { id: 44, src: "/assets/dress/d14.jpeg", category: "gowns", title: "Black Long Dress" },
+    { id: 44, src: "/assets/dress/d14.jpeg", category: "partha", title: "Black Long Dress" },
     { id: 45, src: "/assets/dress/d15.jpeg", category: "gowns", title: "Blue Casual Dress" },
     { id: 46, src: "/assets/dress/d16.jpeg", category: "gowns", title: "Grey Simple Dress" },
     { id: 47, src: "/assets/dress/d17.jpeg", category: "gowns", title: "Maroon Printed Dress" },
     { id: 48, src: "/assets/dress/d18.jpeg", category: "gowns", title: "Navy Blue Dress" },
-    { id: 49, src: "/assets/dress/d19.jpeg", category: "gowns", title: "Purple Elegant Dress" },
+    { id: 49, src: "/assets/dress/d19.jpeg", category: "partha", title: "Purple Elegant Dress" },
     { id: 50, src: "/assets/dress/d20.jpeg", category: "gowns", title: "Beige Pattern Dress" },
     { id: 51, src: "/assets/dress/d21.jpeg", category: "nighty", title: "Red Pattern Dress" },
     { id: 52, src: "/assets/dress/d22.jpeg", category: "gowns", title: "Yellow Festive Dress" },
@@ -133,8 +133,8 @@ export default function Gallery() {
                 key={filter.key}
                 onClick={() => setActiveFilter(filter.key)}
                 className={`px-6 py-2.5 text-[13px] tracking-wide rounded-full transition-all duration-300 whitespace-nowrap ${activeFilter === filter.key
-                    ? "bg-[#1a1a1a] text-white shadow-lg shadow-black/10"
-                    : "bg-[#f5f0eb] text-[#666] hover:bg-[#ebe4da] hover:text-[#1a1a1a]"
+                  ? "bg-[#1a1a1a] text-white shadow-lg shadow-black/10"
+                  : "bg-[#f5f0eb] text-[#666] hover:bg-[#ebe4da] hover:text-[#1a1a1a]"
                   }`}
               >
                 {filter.label}
