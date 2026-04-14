@@ -52,7 +52,7 @@ export default function About() {
             className="relative"
           >
             <div className="aspect-[4/5] rounded-[40px] overflow-hidden shadow-2xl relative z-10">
-              <img src="/assets/owner.jpeg" alt="Craftsmanship" className="w-full h-full object-cover" />
+              <img src="/assets/owner2.png" alt="Craftsmanship" className="w-full h-full object-cover" />
             </div>
             <div className="absolute -top-10 -left-10 w-40 h-40 border-2 border-[#f5f0eb] rounded-[30px] -z-10" />
             <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-[#f5f0eb] rounded-[30px] -z-10" />
