@@ -7,7 +7,7 @@ export default function Contact() {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
-  const phone = "918592845945";
+  const phone = "919544713654";
 
   const getWhatsAppLink = () => {
     const text = encodeURIComponent(
@@ -67,7 +67,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 className="text-sm font-semibold text-[#1a1a1a] uppercase tracking-wider mb-1">WhatsApp Call</h4>
-                  <p className="text-[#666] font-light">+91 81119 69696</p>
+                  <p className="text-[#666] font-light">+91 9544713654</p>
                 </div>
               </div>
 
@@ -77,7 +77,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 className="text-sm font-semibold text-[#1a1a1a] uppercase tracking-wider mb-1">Email Us</h4>
-                  <p className="text-[#666] font-light">hello@clothing.in</p>
+                  <p className="text-[#666] font-light">meharnighties@gmail.com</p>
                 </div>
               </div>
 
@@ -87,7 +87,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 className="text-sm font-semibold text-[#1a1a1a] uppercase tracking-wider mb-1">Our Shop</h4>
-                  <p className="text-[#666] font-light">123 Fashion Street, Mumbai, Maharashtra 400001</p>
+                  <p className="text-[#666] font-light">Mehar Nighty Center, Nadackal P O, Erattupetta, Pin: 686121</p>
                 </div>
               </div>
 
