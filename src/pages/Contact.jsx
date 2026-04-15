@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Send, Phone, Mail, MapPin, Clock } from "lucide-react";
 
 export default function Contact() {
@@ -11,9 +11,39 @@ export default function Contact() {
 
   const getWhatsAppLink = () => {
     const text = encodeURIComponent(
-      `Hi, I would like to know more about your collection.\n\nName: ${name} \nEmail: ${email} \nMessage: ${message} `
+      `Hi, I would like to know more about your collection.\n\nName: ${name} \nEmail: ${email} \nMessage: ${message}`
     );
     return `https://api.whatsapp.com/send?phone=${phone}&text=${text}`;
+  };
+
+  // ✅ IMAGE ARRAY
+  const images = [
+    "/assets/build/b1.png",
+    "/assets/build/b4.jpeg",
+    "/assets/build/b5.jpeg",
+    "/assets/build/b6.jpeg",
+    "/assets/build/b7.jpeg",
+
+  ];
+
+  const [current, setCurrent] = useState(0);
+
+  // ✅ AUTO SLIDE
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % images.length);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  // ✅ BUTTONS
+  const nextSlide = () => {
+    setCurrent((prev) => (prev + 1) % images.length);
+  };
+
+  const prevSlide = () => {
+    setCurrent((prev) => (prev - 1 + images.length) % images.length);
   };
 
   return (
@@ -29,6 +59,7 @@ export default function Contact() {
           >
             Get In Touch
           </motion.p>
+
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -37,6 +68,7 @@ export default function Contact() {
           >
             Connect With Our <span className="italic font-light">Shop</span>
           </motion.h1>
+
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -58,7 +90,9 @@ export default function Contact() {
             viewport={{ once: true }}
             transition={{ duration: 1 }}
           >
-            <h2 className="text-3xl md:text-5xl font-serif font-semibold text-[#1a1a1a] mb-12">Contact Information</h2>
+            <h2 className="text-3xl md:text-5xl font-serif font-semibold text-[#1a1a1a] mb-12">
+              Contact Information
+            </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
               <div className="space-y-4">
@@ -66,7 +100,9 @@ export default function Contact() {
                   <Phone size={20} />
                 </div>
                 <div>
-                  <h4 className="text-sm font-semibold text-[#1a1a1a] uppercase tracking-wider mb-1">WhatsApp Call</h4>
+                  <h4 className="text-sm font-semibold uppercase tracking-wider mb-1">
+                    WhatsApp Call
+                  </h4>
                   <p className="text-[#666] font-light">+91 9544713654</p>
                 </div>
               </div>
@@ -76,7 +112,9 @@ export default function Contact() {
                   <Mail size={20} />
                 </div>
                 <div>
-                  <h4 className="text-sm font-semibold text-[#1a1a1a] uppercase tracking-wider mb-1">Email Us</h4>
+                  <h4 className="text-sm font-semibold uppercase tracking-wider mb-1">
+                    Email Us
+                  </h4>
                   <p className="text-[#666] font-light">meharnighties@gmail.com</p>
                 </div>
               </div>
@@ -86,8 +124,12 @@ export default function Contact() {
                   <MapPin size={20} />
                 </div>
                 <div>
-                  <h4 className="text-sm font-semibold text-[#1a1a1a] uppercase tracking-wider mb-1">Our Shop</h4>
-                  <p className="text-[#666] font-light">Mehar Nighty Center, Nadackal P O, Erattupetta, Pin: 686121</p>
+                  <h4 className="text-sm font-semibold uppercase tracking-wider mb-1">
+                    Our Shop
+                  </h4>
+                  <p className="text-[#666] font-light">
+                    Mehar Nighty Center, Nadackal P O, Erattupetta, Pin: 686121
+                  </p>
                 </div>
               </div>
 
@@ -96,14 +138,47 @@ export default function Contact() {
                   <Clock size={20} />
                 </div>
                 <div>
-                  <h4 className="text-sm font-semibold text-[#1a1a1a] uppercase tracking-wider mb-1">Opening Hours</h4>
-                  <p className="text-[#666] font-light">Mon - Sat: 10:00 AM - 8:00 PM</p>
+                  <h4 className="text-sm font-semibold uppercase tracking-wider mb-1">
+                    Opening Hours
+                  </h4>
+                  <p className="text-[#666] font-light">
+                    Mon - Sat: 10:00 AM - 8:00 PM
+                  </p>
                 </div>
               </div>
             </div>
 
-            <div className="mt-16 relative aspect-video rounded-[30px] hover:grayscale-0 transition-all duration-700">
-              <img src="/assets/dress/contact.jpeg" alt="Our Shop Location" className="w-full h-full object-cover" />
+            {/* ✅ SLIDER */}
+            <div className="mt-16 relative aspect-video rounded-[30px] overflow-hidden group">
+              <div
+                className="flex transition-transform duration-700"
+                style={{ transform: `translateX(-${current * 100}%)` }}
+              >
+                {images.map((img, index) => (
+                  <img
+                    key={index}
+                    src={img}
+                    className="w-full h-full object-cover flex-shrink-0"
+                    alt="shop"
+                  />
+                ))}
+              </div>
+
+              {/* LEFT */}
+              <button
+                onClick={prevSlide}
+                className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/40 text-white px-3 py-2 rounded-full opacity-0 group-hover:opacity-100 transition"
+              >
+                ‹
+              </button>
+
+              {/* RIGHT */}
+              <button
+                onClick={nextSlide}
+                className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/40 text-white px-3 py-2 rounded-full opacity-0 group-hover:opacity-100 transition"
+              >
+                ›
+              </button>
             </div>
           </motion.div>
 
@@ -116,13 +191,21 @@ export default function Contact() {
             className="bg-[#faf8f5] p-10 md:p-16 rounded-[40px] border border-gray-100"
           >
             <div className="mb-10">
-              <h3 className="text-2xl md:text-3xl font-serif font-semibold text-[#1a1a1a] mb-3">Send Us a Message</h3>
-              <p className="text-[#888] font-light">We typically respond within 2-4 business hours.</p>
+              <h3 className="text-2xl md:text-3xl font-serif font-semibold mb-3">
+                Send Us a Message
+              </h3>
+              <p className="text-[#888] font-light">
+                We typically respond within 2-4 business hours.
+              </p>
             </div>
 
             <div className="space-y-6">
+
+              {/* NAME */}
               <div className="space-y-2">
-                <label className="text-[10px] uppercase tracking-[0.2em] font-semibold text-[#1a1a1a]/50 ml-1">Full Name</label>
+                <label className="text-[10px] uppercase tracking-[0.2em] font-semibold text-[#1a1a1a]/50 ml-1">
+                  Full Name
+                </label>
                 <input
                   type="text"
                   placeholder="Your name"
@@ -132,8 +215,11 @@ export default function Contact() {
                 />
               </div>
 
+              {/* EMAIL */}
               <div className="space-y-2">
-                <label className="text-[10px] uppercase tracking-[0.2em] font-semibold text-[#1a1a1a]/50 ml-1">Email Address</label>
+                <label className="text-[10px] uppercase tracking-[0.2em] font-semibold text-[#1a1a1a]/50 ml-1">
+                  Email Address
+                </label>
                 <input
                   type="email"
                   placeholder="hello@example.com"
@@ -143,17 +229,21 @@ export default function Contact() {
                 />
               </div>
 
+              {/* MESSAGE */}
               <div className="space-y-2">
-                <label className="text-[10px] uppercase tracking-[0.2em] font-semibold text-[#1a1a1a]/50 ml-1">Your Message</label>
+                <label className="text-[10px] uppercase tracking-[0.2em] font-semibold text-[#1a1a1a]/50 ml-1">
+                  Your Message
+                </label>
                 <textarea
-                  placeholder="How can we help you today?"
                   rows={4}
+                  placeholder="How can we help you today?"
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
                   className="w-full bg-white border border-gray-100 rounded-2xl px-6 py-4 text-sm focus:outline-none focus:border-[#c4a77d] transition-all resize-none"
                 />
               </div>
 
+              {/* BUTTON */}
               <a
                 href={getWhatsAppLink()}
                 target="_blank"
@@ -163,6 +253,7 @@ export default function Contact() {
                 Connect on WhatsApp
                 <Send size={14} className="shrink-0" />
               </a>
+
             </div>
           </motion.div>
 
