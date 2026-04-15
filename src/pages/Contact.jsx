@@ -248,7 +248,7 @@ export default function Contact() {
                 href={getWhatsAppLink()}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full bg-[#1a1a1a] text-white py-5 rounded-2xl text-xs tracking-[0.25em] font-semibold uppercase hover:bg-[#333] hover:shadow-xl hover:shadow-black/10 transition-all duration-300 flex items-center justify-center gap-3 text-center whitespace-nowrap"
+                className="w-full bg-[#1a1a1a] text-white py-6 md:py-5 px-6 rounded-2xl text-xs tracking-[0.25em] font-semibold uppercase hover:bg-[#333] hover:shadow-xl hover:shadow-black/10 transition-all duration-300 flex items-center justify-center gap-3 text-center whitespace-nowrap"
               >
                 Connect on WhatsApp
                 <Send size={14} className="shrink-0" />
