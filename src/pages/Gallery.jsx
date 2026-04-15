@@ -14,8 +14,6 @@ export default function Gallery() {
     { id: 4, src: "/assets/tops/h23.png", category: "churithar", title: "Printed Shirt" },
     { id: 5, src: "/assets/tops/h24.png", category: "nighty", title: "Summer Shirt" },
     { id: 6, src: "/assets/tops/h25.png", category: "shawl", title: "Office Wear Top" },
-    { id: 7, src: "/assets/tops/h26.png", category: "tops", title: "Stylish Shirt" },
-    { id: 8, src: "/assets/tops/h27.png", category: "tops", title: "Long Top" },
     { id: 9, src: "/assets/tops/h28.png", category: "tops", title: "Daily Shirt" },
     { id: 10, src: "/assets/tops/h29.png", category: "tops", title: "Simple Top" },
     { id: 11, src: "/assets/tops/h30.png", category: "churithar", title: "Embroidered Top" },
@@ -78,7 +76,6 @@ export default function Gallery() {
     { id: 63, src: "/assets/C1.png", category: "churithar", title: "Blue Embroidered Churithar" },
     { id: 64, src: "/assets/C2.png", category: "churithar", title: "Red Festive Churithar" },
     { id: 65, src: "/assets/C3.png", category: "churithar", title: "Green Traditional Churithar" },
-    { id: 66, src: "/assets/L1.png", category: "tops", title: "Cream Ethnic Set" },
     { id: 67, src: "/assets/C10.png", category: "churithar", title: "Pink Designer Churithar" }
   ];
 

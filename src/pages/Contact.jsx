@@ -7,7 +7,7 @@ export default function Contact() {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
-  const phone = "919544713654";
+  const phone = "918593846718";
 
   const getWhatsAppLink = () => {
     const text = encodeURIComponent(
