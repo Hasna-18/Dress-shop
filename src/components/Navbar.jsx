@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link, useLocation } from 'react-router-dom';
-// import { Search, User, Heart, ShoppingBag } from 'lucide-react';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -49,9 +48,9 @@ export default function Navbar() {
             onClick={() => setIsOpen(!isOpen)}
             className="md:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1.5 focus:outline-none z-50"
           >
-            <span className={`block w-5 h-[1px] bg-[#1a1a1a] transform transition duration-500 ease-in-out ${isOpen ? 'rotate-45 translate-y-[7px]' : ''}`} />
-            <span className={`block w-5 h-[1px] bg-[#1a1a1a] transition duration-500 ease-in-out ${isOpen ? 'opacity-0' : 'opacity-100'}`} />
-            <span className={`block w-5 h-[1px] bg-[#1a1a1a] transform transition duration-500 ease-in-out ${isOpen ? '-rotate-45 -translate-y-[7px]' : ''}`} />
+            <span className={`block w-5 h-px bg-[#1a1a1a] transform transition duration-500 ease-in-out ${isOpen ? 'rotate-45 translate-y-[7px]' : ''}`} />
+            <span className={`block w-5 h-px bg-[#1a1a1a] transition duration-500 ease-in-out ${isOpen ? 'opacity-0' : 'opacity-100'}`} />
+            <span className={`block w-5 h-px bg-[#1a1a1a] transform transition duration-500 ease-in-out ${isOpen ? '-rotate-45 -translate-y-[7px]' : ''}`} />
           </button>
 
           {/* Center - Logo */}
@@ -75,31 +74,12 @@ export default function Navbar() {
                 }`}
               >
                 {link.name}
-                <span className={`absolute -bottom-1 left-0 h-[1px] bg-[#f4a7bb] transition-all duration-300 ${
+                <span className={`absolute -bottom-1 left-0 h-px bg-[#f4a7bb] transition-all duration-300 ${
                   location.pathname === link.href ? 'w-full' : 'w-0 group-hover:w-full'
                 }`}></span>
               </Link>
             ))}
           </div>
-
-          {/* Right - Icons */}
-          {/* <div className="flex items-center gap-5">
-            <button className="text-[#1a1a1a] hover:text-[#c4a77d] transition-colors hidden sm:block" aria-label="Search">
-              <Search size={18} strokeWidth={1.5} />
-            </button>
-            <button className="text-[#1a1a1a] hover:text-[#c4a77d] transition-colors hidden sm:block" aria-label="Profile">
-              <User size={18} strokeWidth={1.5} />
-            </button>
-            <button className="text-[#1a1a1a] hover:text-[#c4a77d] transition-colors hidden sm:block" aria-label="Wishlist">
-              <Heart size={18} strokeWidth={1.5} />
-            </button>
-            <button className="text-[#1a1a1a] hover:text-[#c4a77d] transition-colors relative" aria-label="Cart">
-              <ShoppingBag size={18} strokeWidth={1.5} />
-              <span className="absolute -top-1.5 -right-1.5 w-4 h-4 bg-[#c4a77d] text-white text-[9px] rounded-full flex items-center justify-center font-medium">
-                2
-              </span>
-            </button>
-          </div> */}
         </div>
       </motion.nav>
 
@@ -132,24 +112,6 @@ export default function Navbar() {
                 </Link>
               </motion.div>
             ))}
-
-            {/* Mobile icons */}
-            {/* <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.6 }}
-              className="flex gap-6 pt-8 border-t border-gray-100 w-full"
-            >
-              <button className="text-[#1a1a1a] hover:text-[#c4a77d] transition-colors" aria-label="Search">
-                <Search size={20} strokeWidth={1.5} />
-              </button>
-              <button className="text-[#1a1a1a] hover:text-[#c4a77d] transition-colors" aria-label="Profile">
-                <User size={20} strokeWidth={1.5} />
-              </button>
-              <button className="text-[#1a1a1a] hover:text-[#c4a77d] transition-colors" aria-label="Wishlist">
-                <Heart size={20} strokeWidth={1.5} />
-              </button>
-            </motion.div> */}
           </motion.div>
         )}
       </AnimatePresence>

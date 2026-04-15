@@ -223,7 +223,7 @@ export default function About() {
             transition={{ duration: 1.2 }}
             className="relative"
           >
-            <div className="aspect-[4/5] rounded-[40px] overflow-hidden shadow-2xl relative z-10">
+            <div className="aspect-4/5 rounded-[40px] overflow-hidden shadow-2xl relative z-10">
               <img
                 src={ownerImg}
                 alt="Owner"
