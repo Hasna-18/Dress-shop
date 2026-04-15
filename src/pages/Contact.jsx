@@ -102,11 +102,8 @@ export default function Contact() {
               </div>
             </div>
 
-            <div className="mt-16 relative aspect-video rounded-[30px] overflow-hidden shadow-2xl grayscale hover:grayscale-0 transition-all duration-700">
+            <div className="mt-16 relative aspect-video rounded-[30px] hover:grayscale-0 transition-all duration-700">
               <img src="/assets/dress/contact.jpeg" alt="Our Shop Location" className="w-full h-full object-cover" />
-              <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
-                <button className="bg-white text-[#1a1a1a] px-8 py-3 rounded-full text-xs tracking-widest font-medium uppercase shadow-lg">Get Directions</button>
-              </div>
             </div>
           </motion.div>
 

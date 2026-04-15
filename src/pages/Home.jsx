@@ -40,15 +40,15 @@ const StockSection = () => (
             transition={{ duration: 0.7, delay: i * 0.12 }}
             className="group bg-white rounded-2xl overflow-hidden border border-gray-100 hover:shadow-xl transition-all duration-500"
           >
-            <div className="relative aspect-[3/4] overflow-hidden bg-[#fce8ed]">
+            <div className="relative aspect-3/4 overflow-hidden bg-[#fce8ed]">
               <img src={item.img} alt={item.name} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" />
-              <span className="absolute top-4 left-4 bg-[#1a1a1a] text-white text-[10px] tracking-[0.1em] uppercase px-3 py-1 rounded-full font-medium">
+              <span className="absolute top-4 left-4 bg-[#1a1a1a] text-white text-[10px] tracking-widest uppercase px-3 py-1 rounded-full font-medium">
                 {item.tag}
               </span>
             </div>
             <div className="p-6 text-center">
               <h3 className="text-base font-serif font-semibold text-[#1a1a1a] mb-4 group-hover:text-[#f4a7bb] transition-colors uppercase tracking-widest">{item.name}</h3>
-              <Link to="/gallery" className="inline-flex items-center gap-2 text-xs tracking-[0.1em] uppercase font-semibold text-[#f4a7bb] hover:text-[#1a1a1a] transition-colors group/link">
+              <Link to="/gallery" className="inline-flex items-center gap-2 text-xs tracking-widest uppercase font-semibold text-[#f4a7bb] hover:text-[#1a1a1a] transition-colors group/link">
                 View More
                 <ArrowRight size={13} className="group-hover/link:translate-x-1 transition-transform" />
               </Link>
@@ -255,7 +255,7 @@ const InstagramSection = () => (
         transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
         className="relative"
       >
-        <div className="absolute -inset-1 bg-linear-to-tr from-[#f09433] via-[#e6683c] via-[#dc2743] via-[#cc2366] to-[#bc1888] rounded-4xl opacity-20 group-hover:opacity-100 blur-sm transition-opacity duration-700" />
+        <div className="absolute -inset-1 bg-linear-to-tr from-[#f09433] via-[#dc2743] to-[#bc1888] rounded-4xl opacity-20 group-hover:opacity-100 blur-sm transition-opacity duration-700" />
 
         <div className="relative aspect-video overflow-hidden rounded-3xl shadow-xl bg-[#fff0f3] border border-gray-100">
           <img
@@ -275,23 +275,37 @@ const InstagramSection = () => (
 /* ── Testimonials ────────────────────────────────────── */
 const testimonials = [
   {
-    name: "Leslie Alexander",
-    role: "Fashion Enthusiast",
-    text: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium. Lorem ipsum dolor sit amet consectetur adipiscing elit. Totam rem aperiam eaque ipsa.",
+    name: "Amina Rahman",
+    role: "Loyal Customer",
+    text: "The fabric quality is honestly better than what I expected. The stitching is neat, and the fit was perfect without any alterations. I’ve already recommended this shop to my friends.",
     rating: 5,
     img: "/assets/C1.png",
   },
   {
-    name: "Ayesha Khan",
+    name: "Nazia Fathima",
     role: "Bridal Client",
-    text: "The dress felt like it was made just for me. Every stitch, every detail was pure perfection. I couldn't have asked for a more beautiful bridal outfit. Truly extraordinary craftsmanship!",
+    text: "My wedding outfit turned out exactly how I imagined it. The detailing, finishing, and overall look were just stunning. I felt confident and beautiful wearing it.",
     rating: 5,
     img: "/assets/C2.png",
   },
   {
-    name: "Priya Sharma",
-    role: "Regular Customer",
-    text: "I've been shopping here for years and the quality never disappoints. The customer service is exceptional and the designs are always on trend. My go-to fashion destination!",
+    name: "Anjali Menon",
+    role: "Regular Buyer",
+    text: "I keep coming back because the designs are always stylish and unique. The pricing is reasonable for the quality you get. Definitely one of my favorite shops.",
+    rating: 4,
+    img: "/assets/C3.png",
+  },
+  {
+    name: "Fathima Noufal",
+    role: "First-Time Customer",
+    text: "I was a bit unsure ordering at first, but the delivery was quick and the dress looked exactly like the photos. Super happy with my purchase.",
+    rating: 5,
+    img: "/assets/C4.png",
+  },
+  {
+    name: "Sneha Reddy",
+    role: "Working Professional",
+    text: "Perfect place for both casual and occasion wear. The material feels premium and comfortable even after long hours. Worth every rupee.",
     rating: 4,
     img: "/assets/C5.png",
   },
