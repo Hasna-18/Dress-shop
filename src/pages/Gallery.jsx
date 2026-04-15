@@ -87,7 +87,7 @@ export default function Gallery() {
     { key: "hijab", label: "Hijabs & Shawls" },
     { key: "churithar", label: "Churithar" },
     { key: "nighty", label: "Nighty" },
-    { key: "tops", label: "Tops & Shirts" },
+    { key: "tops", label: "Tops" },
     { key: "gowns", label: "Gowns" },
   ];
 

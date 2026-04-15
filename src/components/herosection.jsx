@@ -43,7 +43,7 @@ const HeroSection = () => {
               transition={{ delay: 0.7, duration: 0.6 }}
               className="text-[#666] text-base leading-relaxed max-w-md mx-auto lg:mx-0 mb-10 font-light"
             >
-              We sell Hijabs, Churidars, Shawls, Partha, Nighties, Tops, Ladies Shirts, and Gowns. Quality clothes for your everyday style.
+              We sell Hijabs, Churidars, Shawls, Nighties, Tops, Ladies Shirts, and Gowns. Quality clothes for your everyday style.
             </motion.p>
 
             <motion.div

@@ -11,7 +11,7 @@ const categories = [
     size: "large",
   },
   {
-    name: "Churidar & Partha",
+    name: "Churidar",
     subtitle: "New Varieties",
     img: "/assets/tops/c2.png",
     bg: "#fce8ed",

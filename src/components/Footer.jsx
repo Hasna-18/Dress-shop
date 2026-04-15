@@ -27,7 +27,7 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <h2 className="text-3xl font-serif font-semibold mb-6 tracking-[0.05em]">Mehar</h2>
             <p className="text-white/50 text-sm leading-relaxed mb-8 max-w-xs">
-              Welcome to our shop. We have a wide variety of Hijabs, Shawls, Churidars, Partha, Nighties, Gowns, Tops and Shirts for ladies.
+              Welcome to our shop. We have a wide variety of Hijabs, Shawls, Churidars, Nighties, Gowns, Tops and Shirts for ladies.
             </p>
             <div className="flex gap-3">
               {[
