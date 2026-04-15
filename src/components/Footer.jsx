@@ -32,12 +32,10 @@ export default function Footer() {
             <div className="flex gap-3">
               {[
                 { icon: <InstagramIcon />, label: "Instagram" },
-                { icon: <FacebookIcon />, label: "Facebook" },
-                { icon: <TwitterIcon />, label: "Twitter" },
               ].map((social) => (
                 <a
                   key={social.label}
-                  href="#"
+                  href="https://www.instagram.com/mehar_clothings"
                   aria-label={social.label}
                   className="w-10 h-10 rounded-full border border-white/15 flex items-center justify-center text-white/50 hover:text-white hover:border-[#f4a7bb] hover:bg-[#f4a7bb]/10 transition-all duration-300"
                 >
